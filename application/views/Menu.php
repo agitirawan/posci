@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Coffee - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Warung Sate Gule KBA</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,30 +10,30 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="<?= base_url('assets/css/open-iconic-bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/animate.css') ?>">
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="<?= base_url('assets/css/owl.carousel.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/owl.theme.default.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/magnific-popup.css') ?>">
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="<?= base_url('assets/css/aos.css') ?>">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="<?= base_url('assets/css/ionicons.min.css') ?>">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap-datepicker.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/jquery.timepicker.css') ?>">
 
 
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?= base_url('assets/css/flaticon.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/icomoon.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Coffee<small>Blend</small></a>
+            <a class="navbar-brand" href="index.html">Warung<small>Sate</small></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
@@ -41,15 +41,15 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item active"><a href="menu.html" class="nav-link">Menu</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Paket</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Take Away</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+                        <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warung</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="shop.html">Shop</a>
-                            <a class="dropdown-item" href="product-single.html">Single Product</a>
-                            <a class="dropdown-item" href="room.html">Cart</a>
+                            <a class="dropdown-item" href="shop.html">Pesanan Ready</a>
+                            <a class="dropdown-item" href="product-single.html">Menu</a>
+                            <a class="dropdown-item" href="room.html">Keranjang</a>
                             <a class="dropdown-item" href="checkout.html">Checkout</a>
                         </div>
                     </li>
@@ -63,7 +63,7 @@
 
     <section class="home-slider owl-carousel">
 
-        <div class="slider-item" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+        <div class="slider-item" style="background-image: url(assets/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
@@ -154,7 +154,7 @@
                 <div class="col-md-6 mb-5 pb-3">
                     <h3 class="mb-5 heading-pricing ftco-animate">Starter</h3>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/dish-1.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/dish-1.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Cornish - Mackerel</span></h3>
@@ -166,7 +166,7 @@
                         </div>
                     </div>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/dish-2.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/dish-2.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Roasted Steak</span></h3>
@@ -178,7 +178,7 @@
                         </div>
                     </div>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/dish-3.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/dish-3.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Seasonal Soup</span></h3>
@@ -190,7 +190,7 @@
                         </div>
                     </div>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/dish-4.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/dish-4.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Chicken Curry</span></h3>
@@ -206,7 +206,7 @@
                 <div class="col-md-6 mb-5 pb-3">
                     <h3 class="mb-5 heading-pricing ftco-animate">Main Dish</h3>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/dish-5.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/dish-5.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Sea Trout</span></h3>
@@ -218,7 +218,7 @@
                         </div>
                     </div>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/dish-6.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/dish-6.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Roasted Beef</span></h3>
@@ -230,7 +230,7 @@
                         </div>
                     </div>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/dish-7.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/dish-7.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Butter Fried Chicken</span></h3>
@@ -242,7 +242,7 @@
                         </div>
                     </div>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/dish-8.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/dish-8.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Chiken Filet</span></h3>
@@ -258,7 +258,7 @@
                 <div class="col-md-6">
                     <h3 class="mb-5 heading-pricing ftco-animate">Desserts</h3>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/dessert-1.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/dessert-1.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Cornish - Mackerel</span></h3>
@@ -270,7 +270,7 @@
                         </div>
                     </div>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/dessert-2.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/dessert-2.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Roasted Steak</span></h3>
@@ -282,7 +282,7 @@
                         </div>
                     </div>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/dessert-3.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/dessert-3.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Seasonal Soup</span></h3>
@@ -294,7 +294,7 @@
                         </div>
                     </div>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/dessert-4.jpg);"></div>
+                        <div class="img" style="background-image: url(assetsimages/dessert-4.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Chicken Curry</span></h3>
@@ -310,7 +310,7 @@
                 <div class="col-md-6">
                     <h3 class="mb-5 heading-pricing ftco-animate">Drinks</h3>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/drink-5.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/drink-5.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Sea Trout</span></h3>
@@ -322,7 +322,7 @@
                         </div>
                     </div>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/drink-6.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/drink-6.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Roasted Beef</span></h3>
@@ -334,7 +334,7 @@
                         </div>
                     </div>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/drink-7.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/drink-7.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Butter Fried Chicken</span></h3>
@@ -346,7 +346,7 @@
                         </div>
                     </div>
                     <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/drink-8.jpg);"></div>
+                        <div class="img" style="background-image: url(assets/images/drink-8.jpg);"></div>
                         <div class="desc pl-3">
                             <div class="d-flex text align-items-center">
                                 <h3><span>Chiken Filet</span></h3>
@@ -391,7 +391,7 @@
                                     <div class="row">
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-1.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dish-1.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Grilled Beef</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -402,7 +402,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-2.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dish-2.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Grilled Beef</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -413,7 +413,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-3.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dish-3.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Grilled Beef</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -424,7 +424,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-4.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dish-4.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Grilled Beef</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -435,7 +435,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-5.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dish-5.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Grilled Beef</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -446,7 +446,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-6.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dish-6.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Grilled Beef</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -462,7 +462,7 @@
                                     <div class="row">
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-1.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/drink-1.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Lemonade Juice</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -473,7 +473,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-2.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/drink-2.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Pineapple Juice</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -484,7 +484,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-3.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/drink-3.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Soda Drinks</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -495,7 +495,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-4.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/drink-4.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Lemonade Juice</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -506,7 +506,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-5.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/drink-5.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Pineapple Juice</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -517,7 +517,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-6.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/drink-6.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Soda Drinks</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -533,7 +533,7 @@
                                     <div class="row">
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-1.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assetsimages/dessert-1.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Hot Cake Honey</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -544,7 +544,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-2.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dessert-2.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Hot Cake Honey</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -555,7 +555,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-3.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dessert-3.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Hot Cake Honey</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -566,7 +566,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-4.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dessert-4.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Hot Cake Honey</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -577,7 +577,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-5.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dessert-5.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Hot Cake Honey</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -588,7 +588,7 @@
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-6.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dessert-6.jpg);"></a>
                                                 <div class="text">
                                                     <h3><a href="#">Hot Cake Honey</a></h3>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
@@ -626,7 +626,7 @@
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Recent Blog</h2>
                         <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+                            <a class="blog-img mr-4" style="background-image: url(assets/images/image_1.jpg);"></a>
                             <div class="text">
                                 <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
                                 <div class="meta">
@@ -637,7 +637,7 @@
                             </div>
                         </div>
                         <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
+                            <a class="blog-img mr-4" style="background-image: url(assets/images/image_2.jpg);"></a>
                             <div class="text">
                                 <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
                                 <div class="meta">
@@ -697,23 +697,23 @@
         </svg></div>
 
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/jquery.timepicker.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
+    <script src="<?= base_url('assets/js/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/jquery-migrate-3.0.1.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/popper.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/jquery.easing.1.3.js') ?>"></script>
+    <script src="<?= base_url('assets/js/jquery.waypoints.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/jquery.stellar.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/owl.carousel.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/jquery.magnific-popup.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/aos.js') ?>"></script>
+    <script src="<?= base_url('assets/js/jquery.animateNumber.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/bootstrap-datepicker.js') ?>"></script>
+    <script src="<?= base_url('assets/js/jquery.timepicker.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/scrollax.min.js') ?>"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="js/google-map.js"></script>
-    <script src="js/main.js"></script>
+    <script src="<?= base_url('assets/js/google-map.js') ?>"></script>
+    <script src="<?= base_url('assets/js/main.js') ?>"></script>
 
 </body>
 
