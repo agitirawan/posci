@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Controller Laporan
+ * Controller Paket
  *
  * This controller for ...
  *
@@ -18,9 +18,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class Laporan extends CI_Controller
+class Paket extends CI_Controller
 {
-
+    
   public function __construct()
   {
     parent::__construct();
@@ -28,10 +28,11 @@ class Laporan extends CI_Controller
 
   public function index()
   {
-    $this->load->view('Laporan');
+    $this->load->view('Paket');
   }
+
 }
 
 
-/* End of file Laporan.php */
-/* Location: ./application/controllers/Laporan.php */
+/* End of file Paket.php */
+/* Location: ./application/controllers/Paket.php */

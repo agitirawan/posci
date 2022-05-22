@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Controller Daftarmenu
+ * Controller Laporan
  *
  * This controller for ...
  *
@@ -18,7 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class Daftarmenu extends CI_Controller
+class Laporan extends CI_Controller
 {
 
   public function __construct()
@@ -28,10 +28,10 @@ class Daftarmenu extends CI_Controller
 
   public function index()
   {
-    $this->load->view('Daftarmenu');
+    $this->load->view('laporanmasuk');
   }
 }
 
 
-/* End of file Daftarmenu.php */
-/* Location: ./application/controllers/Daftarmenu.php */
+/* End of file Laporan.php */
+/* Location: ./application/controllers/Laporan.php */

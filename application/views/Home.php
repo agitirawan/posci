@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>District 7 Coffee cofee And Snack</title>
+    <title>Warung Sate Gule </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -33,7 +33,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Home  <small>Warung KBA</small></a>
+            <a class="navbar-brand" href="index.html">Home <small>Warung KBA</small></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
@@ -41,15 +41,15 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Paket</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Take Away</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+                        <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warung</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="shop.html">Shop</a>
-                            <a class="dropdown-item" href="product-single.html">Single Product</a>
-                            <a class="dropdown-item" href="room.html">Cart</a>
+                            <a class="dropdown-item" href="shop.html">Pesanan Ready</a>
+                            <a class="dropdown-item" href="product-single.html">Menu</a>
+                            <a class="dropdown-item" href="room.html">Keranjang</a>
                             <a class="dropdown-item" href="checkout.html">Checkout</a>
                         </div>
                     </li>
@@ -69,7 +69,7 @@
 
                     <div class="col-md-8 col-sm-12 text-center ftco-animate">
                         <span class="subheading">Welcome</span>
-                        <h1 class="mb-4">The Best Coffee Testing Experience</h1>
+                        <h1 class="mb-4">Selamat Datang Di Warung Kami</h1>
                         <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                         <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
                     </div>
@@ -85,7 +85,7 @@
 
                     <div class="col-md-8 col-sm-12 text-center ftco-animate">
                         <span class="subheading">Welcome</span>
-                        <h1 class="mb-4">Amazing Taste &amp; Beautiful Place</h1>
+                        <h1 class="mb-4">Selamat Datang Di Warung Kami</h1>
                         <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                         <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
                     </div>
@@ -101,7 +101,7 @@
 
                     <div class="col-md-8 col-sm-12 text-center ftco-animate">
                         <span class="subheading">Welcome</span>
-                        <h1 class="mb-4">Creamy Hot and Ready to Serve</h1>
+                        <h1 class="mb-4">Selamat Datang Di warung Kami </h1>
                         <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                         <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
                     </div>
@@ -134,7 +134,7 @@
                             <div class="icon"><span class="icon-clock-o"></span></div>
                             <div class="text">
                                 <h3>Open Monday-Friday</h3>
-                                <p>8:00am - 9:00pm</p>
+                                <p>16:00am - 21:00pm</p>
                             </div>
                         </div>
                     </div>
