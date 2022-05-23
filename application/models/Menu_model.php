@@ -1,43 +1,20 @@
-<?php
-defined('BASEPATH') or exit('No direct script access allowed');
-
-/**
- *
- * Model Menu_model
- *
- * This Model for ...
- * 
- * @package		CodeIgniter
- * @category	Model
- * @author    Setiawan Jodi <jodisetiawan@fisip-untirta.ac.id>
- * @link      https://github.com/setdjod/myci-extension/
- * @param     ...
- * @return    ...
- *
- */
-
-class Menu_model extends CI_Model
+<?php class Menu_model extends CI_Model
 {
-
-  // ------------------------------------------------------------------------
-
-  public function __construct()
+  function get_all_Menu()
   {
-    parent::__construct();
+    return $this->db->get('menu')->result_array();;
   }
-
-  // ------------------------------------------------------------------------
-
-
-  // ------------------------------------------------------------------------
-  public function index()
+  public function Tampil_data()
   {
-    //
+    $data = [
+      "ukuran" => $this->input->post('ukuran'),
+      "keterangan" => $this->input->post('keterangan'),
+      "Harga" => $this->input->post('Harga'),
+    ];
+    $this->db->insert('menu', $data);
   }
-
-  // ------------------------------------------------------------------------
-
+  public function get_id_paket($id)
+  {
+    return $this->db->get_where('menu', ['id' => $id])->row_array();
+  }
 }
-
-/* End of file Menu_model.php */
-/* Location: ./application/models/Menu_model.php */

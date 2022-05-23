@@ -1,42 +1,20 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-/**
- *
- * Model Paket_model
- *
- * This Model for ...
- * 
- * @package		CodeIgniter
- * @category	Model
- * @author    Setiawan Jodi <jodisetiawan@fisip-untirta.ac.id>
- * @link      https://github.com/setdjod/myci-extension/
- * @param     ...
- * @return    ...
- *
- */
-
-class Paket_model extends CI_Model {
-
-  // ------------------------------------------------------------------------
-
-  public function __construct()
+<?php class Paket_model extends CI_Model
+{
+  function get_all_Paket()
   {
-    parent::__construct();
+    return $this->db->get('paket')->result_array();;
   }
-
-  // ------------------------------------------------------------------------
-
-
-  // ------------------------------------------------------------------------
-  public function index()
+  public function Tampil_data()
   {
-    // 
+    $data = [
+      "ukuran" => $this->input->post('ukuran'),
+      "keterangan" => $this->input->post('keterangan'),
+      "Harga" => $this->input->post('Harga'),
+    ];
+    $this->db->insert('paket', $data);
   }
-
-  // ------------------------------------------------------------------------
-
+  public function get_id_paket($id)
+  {
+    return $this->db->get_where('paket', ['id' => $id])->row_array();
+  }
 }
-
-/* End of file Paket_model.php */
-/* Location: ./application/models/Paket_model.php */

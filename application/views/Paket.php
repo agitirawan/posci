@@ -43,7 +43,7 @@
                     <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
                     <li class="nav-item active"><a href="services.html" class="nav-link">Paket</a></li>
                     <li class="nav-item"><a href="blog.html" class="nav-link">Take Away</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warung</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -63,7 +63,7 @@
 
     <section class="home-slider owl-carousel">
 
-        <div class="slider-item" style="background-image: url('assets/images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+        <div class="slider-item" style="background-image: url('assets/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
