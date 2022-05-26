@@ -63,7 +63,7 @@
 
     <section class="home-slider owl-carousel">
 
-        <div class="slider-item" style="background-image: url(assets/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+        <div class="slider-item" style="background-image: url(assets/images/satay.jpg);" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
@@ -86,28 +86,30 @@
                         <div class="col-md-4 d-flex ftco-animate">
                             <div class="icon"><span class="icon-phone"></span></div>
                             <div class="text">
-                                <h3>000 (123) 456 7890</h3>
-                                <p>A small river named Duden flows by their place and supplies.</p>
+                                <h3>contact </h3>
+                                <p>Bpk Riswan : 08214148800
+                                    Ibu Urifah : 081339840303
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-4 d-flex ftco-animate">
                             <div class="icon"><span class="icon-my_location"></span></div>
                             <div class="text">
-                                <h3>198 West 21th Street</h3>
-                                <p> 203 Fake St. Mountain View, San Francisco, California, USA</p>
+                                <h3>address</h3>
+                                <p> Jln. Raya Segaran No 196 Rt.04 Rw.09 Kab.Malang Kendalpayak</p>
                             </div>
                         </div>
                         <div class="col-md-4 d-flex ftco-animate">
                             <div class="icon"><span class="icon-clock-o"></span></div>
                             <div class="text">
-                                <h3>Open Monday-Friday</h3>
-                                <p>8:00am - 9:00pm</p>
+                                <h3>Open Everyday</h3>
+                                <p>16.00 - 21.00</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="book p-4">
-                    <h3>Book a Table</h3>
+                    <h3>Tabel customer Order </h3>
                     <form action="#" class="appointment-form">
                         <div class="d-md-flex">
                             <div class="form-group">
