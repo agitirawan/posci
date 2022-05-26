@@ -78,7 +78,7 @@
                 <input type="hidden" name="id">
                 <div class="form-group">
                     <label>Tanggal</label>
-                    <input type="date" class="form-control" placeholder="tangggal" name="tangggal" required>
+                    <input type="date" class="form-control" placeholder="tangggal" name="tanggal" required>
                 </div>
                 <div class="form-group">
                     <label>qty</label>
