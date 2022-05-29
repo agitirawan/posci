@@ -19,14 +19,14 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Warung</b>Sate</a>
+            <a href="<?= base_url('login') ?>"><b>Warung</b>Sate</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
-                <form action="../../index3.html" method="post">
+                <form action="<?= base_url('home') ?>" method="post">
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Email">
                         <div class="input-group-append">
@@ -61,12 +61,8 @@
                 </form>
 
                 <div class="social-auth-links text-center mb-3">
-
-                    <p class="mb-1">
-                        <a href="forgot-password.html">I forgot my password</a>
-                    </p>
                     <p class="mb-0">
-                        <a href="register.html" class="text-center">Register a User</a>
+                        <a href="<?= base_url('register') ?>" class="text-center">Register a User</a>
                     </p>
                 </div>
                 <!-- /.login-card-body -->

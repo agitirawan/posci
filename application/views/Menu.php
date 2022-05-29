@@ -39,11 +39,11 @@
             </button>
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item active"><a href="menu.html" class="nav-link">Menu</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Paket</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Take Away</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="<?= base_url('home') ?>" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="<? base_url('menu') ?>" class="nav-link">Menu</a></li>
+                    <li class="nav-item"><a href="<?= base_url('paket') ?>" class="nav-link">Paket</a></li>
+                    <li class="nav-item"><a href="<?= base_url('takeaway') ?>" class="nav-link">Take Away</a></li>
+                    <li class="nav-item"><a href="<?= base_url('warung') ?>" class="nav-link">warung</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warung</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
