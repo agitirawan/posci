@@ -13,6 +13,9 @@ class Dashboard extends CI_Controller
 
 	public function register()
 	{
+
+
+		$data['title'] = 'registrasi';
 		$this->load->view('Register');
 	}
 	public function login()

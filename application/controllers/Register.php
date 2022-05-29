@@ -25,6 +25,7 @@ class Register extends CI_Controller
   {
     parent::__construct();
     $this->load->model('M_Register');
+    $this->load->library('form_validation');
   }
 
   public function index()
@@ -33,6 +34,19 @@ class Register extends CI_Controller
   }
   public function aksi_Register()
   {
+    $this->form_validation->set_rules('fullname', 'Fullname', 'required|trim');
+    $this->form_validation->set_rules('email', 'Email', 'required|trim|validation_email');
+    $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[8]');
+    $this->form_validation->set_rules('retype Password', 'Retype Password ', 'required|trim|min_length[8]');
+
+
+
+    if ($this->form_validation->run() == FALSE) {
+      # code...
+    } else {
+      # code...
+    }
+
     $fullname = $this->input->post('Fullname');
     $Email = $this->input->post('Email');
     $Password = $this->input->post('Password');
@@ -41,7 +55,7 @@ class Register extends CI_Controller
       'Email' => $Email,
       'Password' => md5($Password)
     );
-    $cek = $this->load->m_Login->cek_Login("user", $where)->num_rows();
+    $cek = $this->load->M_register->cek_Register("user", $where)->num_rows();
     if ($cek > 0) {
 
       $data_session = array(
