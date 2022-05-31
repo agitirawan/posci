@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2022 at 05:43 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 7.4.22
+-- Waktu pembuatan: 31 Bulan Mei 2022 pada 07.35
+-- Versi server: 10.4.21-MariaDB
+-- Versi PHP: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,25 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `daftarmenu`
+-- Struktur dari tabel `laporan_masuk`
 --
 
-CREATE TABLE `daftarmenu` (
+CREATE TABLE `laporan_masuk` (
   `id` int(50) NOT NULL,
   `tanggal` date NOT NULL,
-  `no_meja` int(50) NOT NULL,
-  `no_order` int(50) NOT NULL,
-  `nama` varchar(150) NOT NULL,
-  `jenis_makanan` varchar(60) NOT NULL,
-  `qty` int(50) NOT NULL,
-  `jumlah_bayar` varchar(50) NOT NULL,
-  `pemabayaran` varchar(30) NOT NULL
+  `nama_makanan_dan_minuman` varchar(50) NOT NULL,
+  `jumlah_uang` int(50) NOT NULL,
+  `jumlah_bayar` int(50) NOT NULL,
+  `jumlah _total` int(60) NOT NULL,
+  `pelanggan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu_saji`
+-- Struktur dari tabel `menu_saji`
 --
 
 CREATE TABLE `menu_saji` (
@@ -56,7 +54,20 @@ CREATE TABLE `menu_saji` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pelanggan`
+-- Struktur dari tabel `paket`
+--
+
+CREATE TABLE `paket` (
+  `id` int(50) NOT NULL,
+  `ukuran` varchar(20) NOT NULL,
+  `keterangan` text NOT NULL,
+  `harga` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
@@ -68,7 +79,7 @@ CREATE TABLE `pelanggan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `pelanggan`
+-- Dumping data untuk tabel `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`id`, `nama`, `jenis_kelamin`, `alamat`, `telepon`) VALUES
@@ -78,7 +89,7 @@ INSERT INTO `pelanggan` (`id`, `nama`, `jenis_kelamin`, `alamat`, `telepon`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesanan_masuk`
+-- Struktur dari tabel `pesanan_masuk`
 --
 
 CREATE TABLE `pesanan_masuk` (
@@ -93,7 +104,7 @@ CREATE TABLE `pesanan_masuk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pesanan_masuk`
+-- Dumping data untuk tabel `pesanan_masuk`
 --
 
 INSERT INTO `pesanan_masuk` (`id`, `nama`, `alamat`, `tgl_pesanan`, `jumlah`, `telepon`, `detail_makanan`, `status`) VALUES
@@ -102,7 +113,7 @@ INSERT INTO `pesanan_masuk` (`id`, `nama`, `alamat`, `tgl_pesanan`, `jumlah`, `t
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -115,7 +126,7 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `transaksi`
+-- Dumping data untuk tabel `transaksi`
 --
 
 INSERT INTO `transaksi` (`id`, `tangggal`, `qty`, `total_bayar`, `jumlah_tunai`, `pelanggan`) VALUES
@@ -124,73 +135,95 @@ INSERT INTO `transaksi` (`id`, `tangggal`, `qty`, `total_bayar`, `jumlah_tunai`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
-  `id` varchar(32) NOT NULL,
-  `fullname` varchar(60) NOT NULL,
-  `email` varchar(60) NOT NULL,
-  `username` varchar(60) NOT NULL,
-  `password` varchar(60) NOT NULL,
-  `last_login` varchar(60) NOT NULL
+  `id` int(32) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `notelp` int(50) NOT NULL,
+  `level` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `notelp`, `level`) VALUES
+(1, 'agit', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'agit@gmail.com', 85694022, 'admin'),
+(2, 'Lorem', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@gmail.com', 866666666, 'user'),
+(4, 'coba', 'coba', 'c3ec0f7b054e729c5a716c8125839829', 'dinarisky04@gmail.com', 0, 'user');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `daftarmenu`
+-- Indeks untuk tabel `laporan_masuk`
 --
-ALTER TABLE `daftarmenu`
+ALTER TABLE `laporan_masuk`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menu_saji`
+-- Indeks untuk tabel `menu_saji`
 --
 ALTER TABLE `menu_saji`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pelanggan`
+-- Indeks untuk tabel `paket`
+--
+ALTER TABLE `paket`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pesanan_masuk`
+-- Indeks untuk tabel `pesanan_masuk`
 --
 ALTER TABLE `pesanan_masuk`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `transaksi`
+-- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `pelanggan`
+-- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `transaksi`
+-- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
