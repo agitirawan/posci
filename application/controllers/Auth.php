@@ -35,13 +35,13 @@ class Auth extends CI_Controller
       redirect('user', 'refresh');
     }
     $data['title'] = 'User Login';
-    $this->load->view('Login', $data);
+    $this->load->view('auth/login.php', $data);
   }
 
   public function login()
   {
     $data['title'] = 'User Login';
-    $this->load->view('Login', $data);
+    $this->load->view('auth/login.php', $data);
   }
 
   public function register()
@@ -52,7 +52,7 @@ class Auth extends CI_Controller
       redirect('user', 'refresh');
     }
     $data['title'] = 'User Register';
-    $this->load->view('register', $data);
+    $this->load->view('auth/register.php', $data);
   }
 
   public function proses_login()
@@ -77,7 +77,7 @@ class Auth extends CI_Controller
     } else {
       $data['pesan'] = 'username dan password anda salah';
       $data['title'] = 'Login';
-      $this->load->view('Login', $data);
+      $this->load->view('auth/login.php', $data);
     }
   }
 
@@ -91,7 +91,7 @@ class Auth extends CI_Controller
 
     if ($this->form_validation->run() == FALSE) {
       $data['title'] = 'User Register';
-      $this->load->view('register');
+      $this->load->view('auth/register.php', $data);
     } else {
       $this->Auth_model->register();
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">

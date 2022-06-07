@@ -12,10 +12,11 @@ class Transaksi_model extends CI_Model
     public function proses_tambah_data()
     {
         $data = [
-            "tangggal" => $this->input->post('tangggal'),
+            "tanggal" => $this->input->post('tanggal'),
             "qty" => $this->input->post('qty'),
+            "gambar" => $this->input->post('gambar'),
             "total_bayar" => $this->input->post('total_bayar'),
-            "total_tunai" => $this->input->post('total_tunai'),
+            "jumlah_tunai" => $this->input->post('jumlah_tunai'),
             "pelanggan" => $this->input->post('pelanggan'),
         ];
         $this->db->insert('transaksi', $data);

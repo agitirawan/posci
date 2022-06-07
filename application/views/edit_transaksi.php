@@ -20,17 +20,20 @@
                  <input type="hidden" name="id" value="<?php echo $Transaksi['id'] ?>">
                  <div class="form-group">
                      <label>tanggal</label>
-                     <input type="date" class="form-control" placeholder="tangggal" name="tangggal" value=" <?php echo $Transaksi['tangggal'] ?>" required>
+                     <input type="date" class="form-control" placeholder="tanggal" name="tanggal" value=" <?php echo $Transaksi['tanggal'] ?>" required>
                  </div>
                  <div class="form-group">
                      <label>qty</label>
-                     <select name='qty' class='form-control'>
-                         <input type="number" class="form-control" placeholder="qty" name="qty" value=" <?php echo $Transaksi['qty'] ?>" required>
+                     <input type="number" class="form-control" placeholder="qty" name="qty" value=" <?php echo $Transaksi['qty'] ?>" required>
                      </select>
                  </div>
                  <div class="form-group">
-                     <label>jumlah bayar</label>
-                     <input type="number" class="form-control" placeholder="jumlah bayar" name="jumlah bayar" value=" <?php echo $Transaksi['jumlah_bayar'] ?>" required>
+                     <label>gambar</label>
+                     <input type="file" name="userfile" size="20" name="gambar" value=" <?php echo $Transaksi['gambar'] ?>" required>
+                 </div>
+                 <div class="form-group">
+                     <label>total bayar</label>
+                     <input type="number" class="form-control" placeholder="total_bayar" name="total_bayar" value=" <?php echo $Transaksi['total_bayar'] ?>" required>
                  </div>
                  <div class="form-group">
                      <label>jumlah tunai</label>

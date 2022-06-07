@@ -16,9 +16,9 @@ class Pelanggan extends CI_Controller
   public function index()
   {
     $data['pelanggan'] = $this->Pelanggan_model->get_all_pelanggan();
-    $this->load->view('include/header.php');
-    $this->load->view('pelanggan/Pelanggan.php', $data);
-    $this->load->view('include/footer.php');
+    $this->load->view('templates/header.php');
+    $this->load->view('pelanggan/index.php', $data);
+    $this->load->view('templates/footer.php');
   }
 
   public function proses_tambah_data()
@@ -41,10 +41,10 @@ class Pelanggan extends CI_Controller
   public function edit_data($id)
   {
     $data['pelanggan'] = $this->Pelanggan_model->get_id_pelanggan($id);
-    $this->load->view('include/header.php');
+    $this->load->view('templates/header.php');
     // $this->load->view('pelanggan/Pelanggan.php');
     $this->load->view('edit_data.php', $data);
-    $this->load->view('include/footer.php');
+    $this->load->view('templates/footer.php');
   }
 }
 

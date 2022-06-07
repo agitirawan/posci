@@ -16,7 +16,7 @@
      <section class="content">
          <div class="container-fluid">
              <!-- <form id="form"> -->
-             <form action="<?= base_url('MenuSaji/proses_edit_data') ?>" method="post">
+             <form action="<?= base_url('Menusaji/proses_edit_data') ?>" method="post">
                  <input type="hidden" name="id" value="<?php echo $menu_saji['id'] ?>">
                  <div class="form-group">
                      <label>Nama Makanan</label>
@@ -24,18 +24,15 @@
                  </div>
                  <div class="form-group">
                      <label>Nama Minumuman</label>
-                     <select name='jenis_kelamin' class='form-control'>
+                     <select name='nama_minuman' class='form-control'>
                          <input type="text" class="form-control" placeholder="Nama_minuman" name="nama_minuman" value=" <?php echo $menu_saji['nama_minuman'] ?>" required>
                      </select>
                  </div>
                  <div class="form-group">
                      <label>harga</label>
-                     <input type="number" class="form-control" placeholder="" name="harga" value=" <?php echo $MenuSaji['harga'] ?>" required>
+                     <input type="number" class="form-control" placeholder="" name="harga" value=" <?php echo $menu_saji['harga'] ?>" required>
                  </div>
-                 <div class="form-group">
-                     <label>gambar</label>
-                     <input type="img" class="form-control" placeholder="img" name="gambar" value=" <?php echo $menu_saji['gambar'] ?>" required>
-                 </div>
+
                  <button class="btn btn-success" type="submit">Add</button>
                  <button class="btn btn-danger" data-dismiss="modal">Close</button>
              </form>
