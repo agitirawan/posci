@@ -41,16 +41,15 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="<?= base_url('home') ?>" class="nav-link">Home</a></li>
                     <li class="nav-item active"><a href="<? base_url('menu') ?>" class="nav-link">Menu</a></li>
-                    <li class="nav-item"><a href="<?= base_url('paket') ?>" class="nav-link">Paket</a></li>
-                    <li class="nav-item"><a href="<?= base_url('takeaway') ?>" class="nav-link">Take Away</a></li>
+
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warung</a>
+                        <a class="nav-link dropdown-toggle" href="<?= base_url('order') ?>" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Order</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="shop.html">Pesanan Ready</a>
-                            <a class="dropdown-item" href="product-single.html">Menu</a>
-                            <a class="dropdown-item" href="room.html">Keranjang</a>
-                            <a class="dropdown-item" href="checkout.html">Checkout</a>
+                            <a class="dropdown-item" href="shop.html">Menu Basic</a>
+                            <a class="dropdown-item" href="product-single.html">Paket</a>
+                            <a class="dropdown-item" href="room.html">shopping chart</a>
+                            <a class="dropdown-item" href="<?= base_url('checkout') ?>">Checkout</a>
                         </div>
                     </li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
