@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Controller Paket
+ * Controller Home
  *
  * This controller for ...
  *
@@ -18,25 +18,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class Paket extends CI_Controller
+class Kasir extends CI_Controller
 {
 
-  public function __construct()
-  {
-    parent::__construct();
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
-    $this->load->model('paket_model');
-  }
-
-
-  public function index()
-  {
-    $this->load->view('');
-    $this->load->view('Paket');
-    $this->load->view('');
-  }
+    public function index()
+    {
+        $this->load->view('kasir');
+    }
 }
 
 
-/* End of file Paket.php */
-/* Location: ./application/controllers/Paket.php */
+/* End of file Home.php */
+/* Location: ./application/controllers/Home.php */

@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Controller TakeAway
+ * Controller ShoppingChart
  *
  * This controller for ...
  *
@@ -18,7 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class TakeAway extends CI_Controller
+class ShoppingChart extends CI_Controller
 {
 
   public function __construct()
@@ -28,10 +28,12 @@ class TakeAway extends CI_Controller
 
   public function index()
   {
-    $this->load->view('TakeAway');
+    $this->load->view('');
+    $this->load->view('shoppingchart/index');
+    $this->load->view('');
   }
 }
 
 
-/* End of file TakeAway.php */
-/* Location: ./application/controllers/TakeAway.php */
+/* End of file ShoppingChart.php */
+/* Location: ./application/controllers/ShoppingChart.php */

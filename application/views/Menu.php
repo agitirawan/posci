@@ -33,8 +33,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Warung<small>Sate</small></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="<?= base_url('home') ?> ">Warung<small>Sate</small></a>
+            <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
             <div class="collapse navbar-collapse" id="ftco-nav">
@@ -46,9 +46,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="<?= base_url('order') ?>" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Order</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="shop.html">Menu Basic</a>
-                            <a class="dropdown-item" href="product-single.html">Paket</a>
-                            <a class="dropdown-item" href="room.html">shopping chart</a>
+                            <a class="dropdown-item" href="<?= base_url('menu basic') ?>">Menu Basic</a>
+                            <a class="dropdown-item" href="<?= base_url('paket') ?>">Paket</a>
+                            <a class="dropdown-item" href=" <?= base_url('shopping chart') ?>">shopping chart</a>
                             <a class="dropdown-item" href="<?= base_url('checkout') ?>">Checkout</a>
                         </div>
                     </li>
@@ -149,226 +149,14 @@
         </div>
     </section>
 
-    <section class="ftco-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-5 pb-3">
-                    <h3 class="mb-5 heading-pricing ftco-animate">Starter</h3>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/dish-1.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Cornish - Mackerel</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/dish-2.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Roasted Steak</span></h3>
-                                <span class="price">$29.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/dish-3.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Seasonal Soup</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/dish-4.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Chicken Curry</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-6 mb-5 pb-3">
-                    <h3 class="mb-5 heading-pricing ftco-animate">Main Dish</h3>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/dish-5.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Sea Trout</span></h3>
-                                <span class="price">$49.91</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/dish-6.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Roasted Beef</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/dish-7.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Butter Fried Chicken</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/dish-8.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Chiken Filet</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <h3 class="mb-5 heading-pricing ftco-animate">Desserts</h3>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/dessert-1.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Cornish - Mackerel</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/dessert-2.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Roasted Steak</span></h3>
-                                <span class="price">$29.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/dessert-3.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Seasonal Soup</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assetsimages/dessert-4.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Chicken Curry</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <h3 class="mb-5 heading-pricing ftco-animate">Drinks</h3>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/drink-5.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Sea Trout</span></h3>
-                                <span class="price">$49.91</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/drink-6.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Roasted Beef</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/drink-7.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Butter Fried Chicken</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(assets/images/drink-8.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-flex text align-items-center">
-                                <h3><span>Chiken Filet</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="ftco-menu mb-5 pb-5">
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Discover</span>
-                    <h2 class="mb-4">Our Products</h2>
+                    <span class="subheading">Welcome</span>
+                    <h2 class="mb-4">Our Menu</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                 </div>
             </div>
@@ -377,11 +165,11 @@
                     <div class="row">
                         <div class="col-md-12 nav-link-wrap mb-5">
                             <div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Main Dish</a>
+                                <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Makanan</a>
 
-                                <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Drinks</a>
+                                <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Minuman</a>
 
-                                <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Desserts</a>
+                                <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Paket</a>
                             </div>
                         </div>
                         <div class="col-md-12 d-flex align-items-center">
@@ -392,66 +180,65 @@
                                     <div class="row">
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dish-1.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/SateAyam.jpg);"></a>
                                                 <div class="text">
-                                                    <h3><a href="#">Grilled Beef</a></h3>
-                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                                                    <p class="price"><span>$2.90</span></p>
+                                                    <h3><a href="#">Sate Ayam</a></h3>
+
+                                                    <p class="price"><span>RP17.000</span></p>
                                                     <p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dish-2.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/SateK.jpg);"></a>
                                                 <div class="text">
-                                                    <h3><a href="#">Grilled Beef</a></h3>
-                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                                                    <p class="price"><span>$2.90</span></p>
+                                                    <h3><a href="#">Sate Kambing</a></h3>
+
+                                                    <p class="price"><span>RP25.000</span></p>
                                                     <p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dish-3.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/TG.jpg);"></a>
                                                 <div class="text">
-                                                    <h3><a href="#">Grilled Beef</a></h3>
-                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                                                    <p class="price"><span>$2.90</span></p>
+                                                    <h3><a href="#">Sate Kambing Tanpa Lemak</a></h3>
+
+                                                    <p class="price"><span>RP27.000</span></p>
                                                     <p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dish-4.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/segogule.jpg);"></a>
                                                 <div class="text">
-                                                    <h3><a href="#">Grilled Beef</a></h3>
-                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                                                    <p class="price"><span>$2.90</span></p>
+                                                    <h3><a href="#">Nasi Dan Gule Kambing</a></h3>
+                                                    <p class="price"><span>RP12.000</span></p>
                                                     <p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dish-5.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/nasi.jpg);"></a>
                                                 <div class="text">
-                                                    <h3><a href="#">Grilled Beef</a></h3>
-                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                                                    <p class="price"><span>$2.90</span></p>
+                                                    <h3><a href="#">Nasi</a></h3>
+
+                                                    <p class="price"><span>RP3.000</span></p>
                                                     <p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 text-center">
                                             <div class="menu-wrap">
-                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/dish-6.jpg);"></a>
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/gule.jpg);"></a>
                                                 <div class="text">
-                                                    <h3><a href="#">Grilled Beef</a></h3>
-                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                                                    <p class="price"><span>$2.90</span></p>
+                                                    <h3><a href="#">Gule</a></h3>
+
+                                                    <p class="price"><span>RP11.000</span></p>
                                                     <p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
                                                 </div>
                                             </div>
