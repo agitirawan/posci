@@ -30,9 +30,9 @@ class Makanan_model extends CI_Model
 
 
   // ------------------------------------------------------------------------
-  public function SemuaData()
+  public function SemuaData_menu()
   {
-    return $this->db->get['menu']->result_array();
+    return $this->db->get('menu')->result_array();
   }
 
   // ------------------------------------------------------------------------

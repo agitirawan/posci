@@ -39,28 +39,32 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>id menu</th>
-                                <th>Nama Menu</th>
-                                <th>Harga</th>
-                                <th>jumlah</th>
-                                <th>gambar</th>
-                                <th>Status</th>
+                                <td>id menu</td>
+                                <td>id ketegori</td>
+                                <td>jumlah</td>
+                                <td>nama makanan</td>
+                                <td>harga</td>
+                                <td></td>
+                                <td>gambar</td>
+                                <td>status</td>
                             </tr>
                         </thead>
+                        <tbody>
                         <tfoot>
+                            <?php
                             $no = 1;
                             foreach ($menu as $menu) { ?>
-                            <tr>
-                                <td><?= $no++; ?></td>
-                                <td><?= $menu['id_menu'] ?></td>
-                                <td><?= $menu['id_kategori'] ?></td>
-                                <td><?= $menu['nam_menu'] ?></td>
-                                <td><?= $menu['harga'] ?></td>
-                                <td><?= $menu['jumlah'] ?></td>
-                                <td><? $menu['gambar'] ?></td>
-                                </td>
-                            </tr>
-                            <?php ?>
+                                <tr>
+                                    <td><?= $no++; ?></td>
+                                    <td><?= $menu['id_menu'] ?></td>
+                                    <td><?= $menu['id_ketegori'] ?></td>
+                                    <td><?= $menu['nam_menu'] ?></td>
+                                    <td><?= $menu['harga'] ?></td>
+                                    <td><?= $menu['jumlah'] ?></td>
+                                    <td><?= $menu['gambar'] ?></td>
+                                    <td><?= $menu['status'] ?></td>
+                                </tr>
+                            <?php } ?>
                         </tfoot>
                         <tbody>
                         </tbody>

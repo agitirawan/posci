@@ -24,11 +24,12 @@ class Makanan extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+    $this->load->model('Makanan_model');
   }
 
   public function index()
   {
-    $data['menu'] = $this->Makanan_model->SemuaData();
+    $data['menu'] = $this->Makanan_model->SemuaData_menu();
     $this->load->view('templates/header.php');
     $this->load->view('makanan/index.php', $data);
     $this->load->view('templates/footer.php');
