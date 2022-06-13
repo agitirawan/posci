@@ -52,35 +52,55 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
 
+            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('pesananmasuk') ?>">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    Pesanan Masuk
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Master Data</span>
                 </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Menu</h6>
+                        <a class="collapse-item" href="<?php base_url() ?>makanan">makanan</a>
+                        <a class="collapse-item" href="<?php base_url() ?>minuman">minuman</a>
+                        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <h6 class="collapse-header">Ketegori Paket</h6>
+                                <a class="collapse-item" href="<?php base_url() ?>paketA">paket A</a>
+                                <a class="collapse-item" href="<?php base_url() ?>paketB">paket B</a>
+                                <a class="collapse-item" href="<?php base_url() ?>paketC">paket C</a>
+                            </div>
+                        </div>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('pelanggan') ?>">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    Pelanggan
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>transaksi</span>
                 </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="<?php base_url() ?>pembayaran">pembayaran</a>
+                        <a class="collapse-item" href="<?php base_url() ?>datakasir">data kasir</a>
+                    </div>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('menusaji') ?>">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    Menu Saji
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Laporan</span>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('transaksi') ?>">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    Transaksi
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('laporan') ?>">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    Laporan
-                </a>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="buttons.html">Transaksi</a>
+                        <a class="collapse-item active" href="cards.html">pegawai</a>
+                        <a class="collapse-item active" href="cards.html">pedapatan</a>
+
+                    </div>
+                </div>
             </li>
         </ul>
         <!-- End of Sidebar -->

@@ -21,91 +21,94 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Auth extends CI_Controller
 {
 
-  public function __construct()
-  {
-    parent::__construct();
-    $this->load->model('Auth_model');
-  }
-
-  public function index()
-  {
-    if ($this->session->userdata('level') == "admin") {
-      redirect('dashboard', 'refresh');
-    } elseif ($this->session->userdata('level') == "user") {
-      redirect('user', 'refresh');
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Auth_model');
     }
-    $data['title'] = 'User Login';
-    $this->load->view('auth/login.php', $data);
-  }
 
-  public function login()
-  {
-    $data['title'] = 'User Login';
-    $this->load->view('auth/login.php', $data);
-  }
+    public function index()
+    {
+        if ($this->session->userdata('level') == "admin") {
+            redirect('dashboard', 'refresh');
+        } elseif ($this->session->userdata('level') == "kasir") {
+            redirect('kasir', 'refresh');
+        } elseif ($this->session->userdata('level') == "user") {
+            redirect('home', 'resfresh');
+        }
 
-  public function register()
-  {
-    if ($this->session->userdata('level') == "admin") {
-      redirect('admin', 'refresh');
-    } elseif ($this->session->userdata('level') == "user") {
-      redirect('user', 'refresh');
+        $data['title'] = 'admin Login';
+        $this->load->view('auth/login.php', $data);
     }
-    $data['title'] = 'User Register';
-    $this->load->view('auth/register.php', $data);
-  }
 
-  public function proses_login()
-  {
-    $username = htmlspecialchars($this->input->post('username'));
-    $password = htmlspecialchars(MD5($this->input->post('password')));
-
-    $ceklogin = $this->Auth_model->login($username, $password);
-
-    if ($ceklogin) {
-      foreach ($ceklogin as $row);
-      //kita set userdata pada session dengan nama user dan isi uername kita isikan username yang ada pada $row
-      $this->session->set_userdata('user', $row->username);
-      $this->session->set_userdata('level', $row->level);
-
-      //var_dump($row);
-      if ($this->session->userdata('level') == "admin") {
-        redirect('dashboard');
-      } elseif ($this->session->userdata('level') == "user") {
-        redirect('menu');
-      }
-    } else {
-      $data['pesan'] = 'username dan password anda salah';
-      $data['title'] = 'Login';
-      $this->load->view('auth/login.php', $data);
+    public function login()
+    {
+        $data['title'] = 'kasir Login';
+        $this->load->view('auth/login.php', $data);
     }
-  }
 
-  public function proses_register()
-  {
-    $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-    $this->form_validation->set_rules('username', 'Username', 'trim|required');
-    $this->form_validation->set_rules('password', 'Password', 'required');
-    $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-    $this->form_validation->set_rules('notelp', 'Notelp', 'required|numeric');
+    public function register()
+    {
+        if ($this->session->userdata('level') == "user") {
+            redirect('admin', 'refresh');
+        }
+        //$data['title'] = 'User Register';
+        //$this->load->view('auth/register.php', $data);
+    }
 
-    if ($this->form_validation->run() == FALSE) {
-      $data['title'] = 'User Register';
-      $this->load->view('auth/register.php', $data);
-    } else {
-      $this->Auth_model->register();
-      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+    public function proses_login()
+    {
+        $username = htmlspecialchars($this->input->post('email'));
+        $password = htmlspecialchars(MD5($this->input->post('pw')));
+
+        $ceklogin = $this->Auth_model->login($username, $password);
+
+        if ($ceklogin) {
+            foreach ($ceklogin as $row);
+            //kita set userdata pada session dengan nama user dan isi uername kita isikan username yang ada pada $row
+            $this->session->set_userdata('kasir', $row->username);
+            $this->session->set_userdata('level', $row->level);
+
+            //var_dump($row);
+            if ($this->session->userdata('level') == "admin") {
+                redirect('dashboard');
+            } elseif ($this->session->userdata('level') == "kasir") {
+                redirect('kasir');
+            } elseif ($this->session->userdata('level') == "user") {
+                redirect('home');
+            }
+        } else {
+            $data['pesan'] = 'email dan password anda salah';
+            $data['title'] = 'Login';
+            $this->load->view('auth/login.php', $data);
+        }
+    }
+
+    public function proses_register()
+    {
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('pw', 'Password', 'required');
+        $this->form_validation->set_rules('telepon', 'telepon', 'required|numeric');
+        $this->form_validation->set_rules('alamat', 'alamat', 'required');
+        $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['title'] = 'User Register';
+            $this->load->view('auth/register.php', $data);
+        } else {
+            $this->Auth_model->register();
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Selamat, akun anda berhasil dibuat.
           </div>');
-      redirect('auth');
+            redirect('auth');
+        }
     }
-  }
 
-  public function logout()
-  {
-    $this->session->sess_destroy();
-    redirect();
-  }
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect();
+    }
 }
 
 

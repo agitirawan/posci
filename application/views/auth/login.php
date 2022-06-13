@@ -45,10 +45,10 @@
                                     ?>
                                     <form class="user">
                                         <div class="form-group">
-                                            <input type="username" class="form-control form-control-user" name="username" id="username" placeholder="Username" required>
+                                            <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="email" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                                            <input type="password" class="form-control" name="pw" id="password" placeholder="Password" required>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                                     </form>

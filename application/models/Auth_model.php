@@ -19,34 +19,36 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Auth_model extends CI_Model
 {
 
-  public function login($username, $password)
-  {
-    $this->db->select('*');
-    $this->db->from('user');
-    $this->db->where('username', $username,);
-    $this->db->where('password', $password,);
-
-    $query = $this->db->get();
-    if ($query->num_rows() == 1) //jika data ditemukan
+    public function login($email, $pw)
     {
-      return $query->result();
-    } else {
-      return false;
-    }
-  }
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('email', $email,);
+        $this->db->where('pw', $pw,);
 
-  public function register()
-  {
-    $data = [
-      'nama' => htmlspecialchars($this->input->post('nama', true)),
-      'username' => htmlspecialchars($this->input->post('username', true)),
-      'password' => htmlspecialchars(MD5($this->input->post('password'))),
-      'email' => htmlspecialchars($this->input->post('email', true)),
-      'notelp' => htmlspecialchars($this->input->post('notelp', true)),
-      'level' => 'user',
-    ];
-    $this->db->insert('user', $data);
-  }
+        $query = $this->db->get();
+        if ($query->num_rows() == 1) //jika data ditemukan
+        {
+            return $query->result();
+        } else {
+            return false;
+        }
+    }
+
+    public function register()
+    {
+        $data = [
+            'email' => htmlspecialchars($this->input->post('email', true)),
+            'pw' => htmlspecialchars(MD5($this->input->post('pw'))),
+            'telepon' => htmlspecialchars($this->input->post('telepon', true)),
+            'alamat' => htmlspecialchars($this->input->post('alamat', true)),
+            'nama' => htmlspecialchars($this->input->post('nama', true)),
+
+
+
+        ];
+        $this->db->insert('user', $data);
+    }
 }
 
 /* End of file Auth_model.php */
