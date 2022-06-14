@@ -96,8 +96,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"></h6>
                         <a class="collapse-item" href="buttons.html">Transaksi</a>
-                        <a class="collapse-item active" href="cards.html">pegawai</a>
-                        <a class="collapse-item active" href="cards.html">pedapatan</a>
+                        <a class="collapse-item active" href="<?php base_url() ?>pegawai">pegawai</a>
+                        <a class="collapse-item active" href="<?php base_url() ?>pendapatan">pedapatan</a>
 
                     </div>
                 </div>

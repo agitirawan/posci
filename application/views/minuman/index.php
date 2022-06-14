@@ -30,14 +30,16 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">tabel data</h6>
+                <a href="<?php base_url() ?>minuman" class="btn btn-primary btn-sm float-right">tambah</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>id menu</th>
-                                <th>Nama Menu</th>
+                                <th> id menu</th>
+                                <th>id kategori</th>
+                                <th>Nama minuman</th>
                                 <th>Harga</th>
                                 <th>jumlah</th>
                                 <th>gambar</th>
@@ -45,6 +47,20 @@
                             </tr>
                         </thead>
                         <tfoot>
+                            <?php
+                            $no = 1;
+                            foreach ($menu as $menu) { ?>
+                                <tr>
+                                    <td><?= $no++; ?></td>
+                                    <td><?= $menu['id_menu'] ?></td>
+                                    <!-- <td><?= $menu['id_ketegori'] ?></td> -->
+                                    <td><?= $menu['nam_menu'] ?></td>
+                                    <td><?= $menu['harga'] ?></td>
+                                    <td><?= $menu['jumlah'] ?></td>
+                                    <td><?= $menu['gambar'] ?></td>
+                                    <td><?= $menu['status'] ?></td>
+                                </tr>
+                            <?php } ?>
                         </tfoot>
                         <tbody>
                         </tbody>

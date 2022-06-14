@@ -34,7 +34,21 @@ class Makanan extends CI_Controller
     $this->load->view('makanan/index.php', $data);
     $this->load->view('templates/footer.php');
   }
+
+  public function tambah_makanan()
+  {
+    $data['menu'] = $this->Makanan_model->SemuaData_menu();
+    $this->load->view('templates/header.php');
+    $this->load->view('makanan/tambah_data', $data);
+    $this->load->view('templates/footer.php');
+  }
+  public function proses_tambah_makanan()
+  {
+    $this->Makanan_model->proses_tambah_makanan();
+    redirect('Makanan');
+  }
 }
+
 
 
 /* End of file Masterdata.php */

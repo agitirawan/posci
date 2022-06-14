@@ -24,13 +24,14 @@ class Minuman extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+    $this->load->model('Minuman_model');
   }
 
   public function index()
   {
-
+    $data['menu'] = $this->Minuman_model->SemuaData_Minuman();
     $this->load->view('templates/header.php');
-    $this->load->view('minuman/index.php');
+    $this->load->view('minuman/index.php', $data);
     $this->load->view('templates/footer.php');
   }
 }

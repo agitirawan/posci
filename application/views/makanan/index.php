@@ -33,6 +33,7 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">tabel data</h6>
+                <a href="<?php base_url() ?>makanan/tambah_makanan" class="btn btn-primary btn-sm float-right">tambah</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -41,12 +42,13 @@
                             <tr>
                                 <td>id menu</td>
                                 <td>id ketegori</td>
-                                <td>jumlah</td>
                                 <td>nama makanan</td>
                                 <td>harga</td>
-                                <td></td>
+                                <td>jumlah</td>
                                 <td>gambar</td>
                                 <td>status</td>
+                                <td colspan="2">setting</td>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -57,12 +59,16 @@
                                 <tr>
                                     <td><?= $no++; ?></td>
                                     <td><?= $menu['id_menu'] ?></td>
-                                    <td><?= $menu['id_ketegori'] ?></td>
+                                    <!-- <td><?= $menu['id_ketegori'] ?></td> -->
                                     <td><?= $menu['nam_menu'] ?></td>
                                     <td><?= $menu['harga'] ?></td>
                                     <td><?= $menu['jumlah'] ?></td>
                                     <td><?= $menu['gambar'] ?></td>
                                     <td><?= $menu['status'] ?></td>
+                                    <td>
+                                        <a href="<?php base_url() ?>Makanan/edit_data_makanan/<?php base_url() ?>menu['id'];" class="budge badge-primary">edit</a>
+                                        <a href="<?php base_url() ?>Makanan/" class="budge badge-denger">delete</a>
+                                    </td>
                                 </tr>
                             <?php } ?>
                         </tfoot>

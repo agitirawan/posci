@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Model Makanan_model
+ * Model Minuman_model_model
  *
  * This Model for ...
  * 
@@ -16,7 +16,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class Makanan_model extends CI_Model
+class Minuman_model extends CI_Model
 {
 
   // ------------------------------------------------------------------------
@@ -30,24 +30,14 @@ class Makanan_model extends CI_Model
 
 
   // ------------------------------------------------------------------------
-  public function SemuaData_menu()
+  public function SemuaData_Minuman()
   {
     return $this->db->get('menu')->result_array();
-  }
-  public function proses_tambah_makanan()
-  {
-    $data = [
-      "nam_menu" => $this->input->post('nama makanan'),
-      "harga" => $this->input->post('harga'),
-      "jumlah" => $this->input->post('jumlah'),
-      "gambar" => $this->input->post('gambar'),
-    ];
-    $this->db->insert('mneu', $data);
   }
 
   // ------------------------------------------------------------------------
 
 }
 
-/* End of file Makanan_model.php */
-/* Location: ./application/models/Makanan_model.php */
+/* End of file Minuman_model_model.php */
+/* Location: ./application/models/Minuman_model_model.php */
