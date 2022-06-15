@@ -66,8 +66,8 @@
                                     <td><?= $menu['gambar'] ?></td>
                                     <td><?= $menu['status'] ?></td>
                                     <td>
-                                        <a href="" class="budge badge-primary">edit</a>
-                                        <a href="" class="budge badge-denger">delete</a>
+                                        <a href="<?php echo base_url() ?>Makanan/proses_edit_data/<?php echo $menu['id_menu']; ?>" class=" budge badge-primary">edit</a>
+                                        <a href="<?php echo base_url() ?>Makanan/proses_hapus_data/<?php echo $menu['id_menu']; ?>" class="budge badge-primary">hapus</a>
                                     </td>
                                 </tr>
                             <?php } ?>

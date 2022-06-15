@@ -44,6 +44,11 @@ class Makanan_model extends CI_Model
     ];
     $this->db->insert('mneu', $data);
   }
+  public function proses_hapus_data($id_menu)
+  {
+    $this->db->where('id_menu', $id_menu);
+    $this->db->delete('menu');
+  }
 
   // ------------------------------------------------------------------------
 
