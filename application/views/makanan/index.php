@@ -66,8 +66,8 @@
                                     <td><?= $menu['gambar'] ?></td>
                                     <td><?= $menu['status'] ?></td>
                                     <td>
-                                        <a href="<?php base_url() ?>Makanan/edit_data_makanan/<?php base_url() ?>menu['id'];" class="budge badge-primary">edit</a>
-                                        <a href="<?php base_url() ?>Makanan/" class="budge badge-denger">delete</a>
+                                        <a href="" class="budge badge-primary">edit</a>
+                                        <a href="" class="budge badge-denger">delete</a>
                                     </td>
                                 </tr>
                             <?php } ?>
