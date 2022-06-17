@@ -47,6 +47,13 @@ class Makanan extends CI_Controller
     $this->Makanan_model->proses_tambah_makanan();
     redirect('Makanan');
   }
+  public function edit_data($id_menu)
+  {
+    $data['menu'] = $this->Makanan_model->Ambil_id_makanan($id_menu);
+    $this->load->view('templates/header.php');
+    $this->load->view('makanan/edit_data', $data);
+    $this->load->view('templates/footer.php');
+  }
 }
 
 

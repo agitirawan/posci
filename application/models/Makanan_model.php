@@ -49,6 +49,12 @@ class Makanan_model extends CI_Model
     $this->db->where('id_menu', $id_menu);
     $this->db->delete('menu');
   }
+  public function proses_id_makanan($id_menu)
+  {
+    return $this->db->get->where('makanan', ['id_menu' => $id_menu])->row_array();
+  }
+
+
 
   // ------------------------------------------------------------------------
 
