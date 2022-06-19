@@ -54,44 +54,51 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
                     <span>Master Data</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-                        <a class="collapse-item" href="<?php echo base_url() ?>kategori">Kategori</a>
-                        <a class="collapse-item" href="<?php base_url() ?>menu">Menu</a>
-                    </div>
-                </div>
+                        <h6 class="collapse-header">Menu</h6>
+                        <a class="collapse-item" href="<?php base_url() ?>makanan">makanan</a>
+                        <a class="collapse-item" href="<?php base_url() ?>minuman">minuman</a>
+                        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <h6 class="collapse-header">Ketegori Paket</h6>
+                                <a class="collapse-item" href="<?php base_url() ?>paketA">paket A</a>
+                                <a class="collapse-item" href="<?php base_url() ?>paketB">paket B</a>
+                                <a class="collapse-item" href="<?php base_url() ?>paketC">paket C</a>
+                            </div>
+                        </div>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Transaksi</span>
+                    <span>transaksi</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
-                        <a class="collapse-item" href="<?php base_url() ?>pembayaran">Pembayaran</a>
-                        <a class="collapse-item" href="<?php base_url() ?>datakasir">Data Kasir</a>
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="<?php base_url() ?>pembayaran">pembayaran</a>
+                        <a class="collapse-item" href="<?php base_url() ?>datakasir">data kasir</a>
                     </div>
                 </div>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
                     <span>Laporan</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <!-- <h6 class="collapse-header">Other Pages:</h6> -->
+                        <h6 class="collapse-header"></h6>
                         <a class="collapse-item" href="buttons.html">Transaksi</a>
-                        <a class="collapse-item" href="<?php base_url() ?>pegawai">Pegawai</a>
-                        <a class="collapse-item" href="<?php base_url() ?>pendapatan">Pendapatan</a>
+                        <a class="collapse-item active" href="<?php base_url() ?>pegawai">pegawai</a>
+                        <a class="collapse-item active" href="<?php base_url() ?>pendapatan">pedapatan</a>
+
                     </div>
                 </div>
             </li>

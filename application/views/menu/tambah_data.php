@@ -1,10 +1,10 @@
 <div clas="container-fluid">
-    <h3>Halaman Tambah Makanan</h3>
+    <h3>Halaman Tambah Menu</h3>
     <hr>
     <br>
-    <form method="post" action="<?php base_url() ?>Makanan/proses_tambah_makanan">
+    <form method="post" action="<?php base_url() ?>Menu/proses_tambah_menu">
         <div class="row mb-3">
-            <label for="nam_menu" class="col-sm-2 col-form-label">nama makanan</label>
+            <label for="nam_menu" class="col-sm-2 col-form-label">Nama Menu</label>
             <div class="col-sm-5">
                 <input type="text" class="form-control" name="nam_menu">
             </div>
@@ -24,12 +24,13 @@
         <div class="row mb-3">
             <label for="gambar" class="col-sm-2 col-form-label">gambar</label>
             <div class="col-sm-5">
-                <input type="file" class="form-control" name="userfile">
+                <input type="file" class="form-control" name="userfile" value=" <?php echo $menu['gambar'] ?>">
             </div>
         </div>
         <div class="row mb-3">
-            <button type="submit" class="btn btn-primary">tambah</button>
-            <button type="submit" class="btn btn-denger">reset</button>
+            <br>
+            <button type="submit" class="btn btn-primary">Tambah</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
         </div>
     </form>
 </div>

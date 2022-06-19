@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Model Minuman_model_model
+ * Model Pembayaran_model_model
  *
  * This Model for ...
  * 
@@ -16,7 +16,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class Minuman_model extends CI_Model
+class Pembayaran_model extends CI_Model
 {
 
   // ------------------------------------------------------------------------
@@ -30,14 +30,14 @@ class Minuman_model extends CI_Model
 
 
   // ------------------------------------------------------------------------
-  public function SemuaData_Minuman()
+  public function Semuadata_pembayaran()
   {
-    return $this->db->get('menu')->result_array();
+    return $this->db->get('pembayaran')->result_array();
   }
 
   // ------------------------------------------------------------------------
 
 }
 
-/* End of file Minuman_model_model.php */
-/* Location: ./application/models/Minuman_model_model.php */
+/* End of file Pembayaran_model_model.php */
+/* Location: ./application/models/Pembayaran_model_model.php */

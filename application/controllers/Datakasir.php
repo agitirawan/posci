@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Controller Masterdata
+ * Controller Datakasir
  *
  * This controller for ...
  *
@@ -18,24 +18,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class Minuman extends CI_Controller
+class Datakasir extends CI_Controller
 {
 
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('Minuman_model');
+    $this->load->model('Data_kasir_model');
   }
 
   public function index()
   {
-    $data['menu'] = $this->Minuman_model->SemuaData_Minuman();
+    $data['transksi'] = $this->Data_kasir_model->SemuaData_transaksi();
     $this->load->view('templates/header.php');
-    $this->load->view('minuman/index.php', $data);
+    $this->load->view('datakasir/index.php', $data);
     $this->load->view('templates/footer.php');
   }
 }
 
 
-/* End of file Masterdata.php */
-/* Location: ./application/controllers/Masterdata.php */
+/* End of file Datakasir.php */
+/* Location: ./application/controllers/Datakasir.php */

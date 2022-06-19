@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Controller Masterdata
+ * Controller Pembayaran
  *
  * This controller for ...
  *
@@ -18,23 +18,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class paketA extends CI_Controller
+class Pembayaran extends CI_Controller
 {
 
   public function __construct()
   {
     parent::__construct();
+    $this->load->model('Pembayaran_model');
   }
 
   public function index()
   {
-
+    $data['pembayaran'] = $this->Pembayaran_model->Semuadata_pembayaran();
     $this->load->view('templates/header.php');
-    $this->load->view('paketA/index.php');
+    $this->load->view('pembayaran/index', $data);
     $this->load->view('templates/footer.php');
   }
 }
 
 
-/* End of file Masterdata.php */
-/* Location: ./application/controllers/Masterdata.php */
+/* End of file Pembayaran.php */
+/* Location: ./application/controllers/Pembayaran.php */

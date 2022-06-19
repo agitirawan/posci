@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Controller Masterdata
+ * Controller Menu
  *
  * This controller for ...
  *
@@ -18,45 +18,51 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class Makanan extends CI_Controller
+class Menu extends CI_Controller
 {
 
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('Makanan_model');
+    $this->load->model('Menu_model');
   }
 
   public function index()
   {
-    $data['menu'] = $this->Makanan_model->SemuaData_menu();
+    $data['menu'] = $this->Menu_model->all_menu();
     $this->load->view('templates/header.php');
-    $this->load->view('makanan/index.php', $data);
+    $this->load->view('menu/index.php', $data);
     $this->load->view('templates/footer.php');
   }
 
-  public function tambah_makanan()
+  public function tambah_menu()
   {
-    $data['menu'] = $this->Makanan_model->SemuaData_menu();
+    $data['menu'] = $this->Menu_model->all_menu();
     $this->load->view('templates/header.php');
-    $this->load->view('makanan/tambah_data', $data);
+    $this->load->view('menu/tambah_data', $data);
     $this->load->view('templates/footer.php');
   }
-  public function proses_tambah_makanan()
+  public function proses_tambah_menu()
   {
-    $this->Makanan_model->proses_tambah_makanan();
-    redirect('Makanan');
+    $this->Menu_model->proses_tambah_menu();
+    redirect('menu');
   }
   public function edit_data($id_menu)
   {
-    $data['menu'] = $this->Makanan_model->Ambil_id_makanan($id_menu);
+    $data['menu'] = $this->Menu_model->proses_id_menu($id_menu);
     $this->load->view('templates/header.php');
-    $this->load->view('makanan/edit_data', $data);
+    $this->load->view('menu/edit_data', $data);
     $this->load->view('templates/footer.php');
   }
+  public function proses_edit_data()
+  {
+    $this->Menu_model->proses_edit_data();
+    redirect('menu');
+  }
+
+  public function proses_hapus_data($id_menu)
+  {
+    $this->Menu_model->proses_hapus_data($id_menu);
+    redirect('menu');
+  }
 }
-
-
-
-/* End of file Masterdata.php */
-/* Location: ./application/controllers/Masterdata.php */
