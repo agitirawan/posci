@@ -27,12 +27,11 @@ class Menu_model extends CI_Model
   public function proses_tambah_menu()
   {
     $data = [
-      "nam_menu" => $this->input->post('Nama Menu'),
-      "harga" => $this->input->post('Harga'),
-      "jumlah" => $this->input->post('Jumlah'),
-      "gambar" => $this->input->post('Gambar'),
-
-
+      "nam_menu" => $this->input->post('nam_menu'),
+      "harga" => $this->input->post('harga'),
+      "jumlah" => $this->input->post('jumlah'),
+      "gambar" => $this->input->post('gambar'),
+      "status" => $this->input->post('status'),
     ];
     $this->db->insert('menu', $data);
   }
@@ -50,10 +49,11 @@ class Menu_model extends CI_Model
   public function proses_edit_data()
   {
     $data = [
-      "nam_menu" => $this->input->post('Nama Menu'),
-      "harga" => $this->input->post('Harga'),
-      "jumlah" => $this->input->post('Jumlah'),
-      "gambar" => $this->input->post('Gambar'),
+      "nam_menu" => $this->input->post('nam_menu'),
+      "harga" => $this->input->post('harga'),
+      "jumlah" => $this->input->post('jumlah'),
+      "gambar" => $this->input->post('gambar'),
+      "status" => $this->input->post('status'),
     ];
     $this->db->where('id_menu', $this->input->post('id_menu'));
     $this->db->update('menu', $data);

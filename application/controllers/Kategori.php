@@ -30,17 +30,17 @@ class Kategori extends CI_Controller
   public function index()
   {
     $data['kategori'] = $this->Kategori_model->all_kategori();
-    $this->load->view('templates/header.php');
-    $this->load->view('kategori/index.php', $data);
-    $this->load->view('templates/footer.php');
+    $this->load->view('templates/header');
+    $this->load->view('kategori/index', $data);
+    $this->load->view('templates/footer');
   }
 
   public function tambah_kategori()
   {
     $data['kategori'] = $this->Kategori_model->all_kategori();
-    $this->load->view('templates/header.php');
+    $this->load->view('templates/header');
     $this->load->view('kategori/tambah_data', $data);
-    $this->load->view('templates/footer.php');
+    $this->load->view('templates/footer');
   }
   public function proses_tambah_kategori()
   {
@@ -50,9 +50,9 @@ class Kategori extends CI_Controller
   public function edit_data($id_kategori)
   {
     $data['kategori'] = $this->Kategori_model->proses_id_kategori($id_kategori);
-    $this->load->view('templates/header.php');
+    $this->load->view('templates/header');
     $this->load->view('kategori/edit_data', $data);
-    $this->load->view('templates/footer.php');
+    $this->load->view('templates/footer');
   }
   public function proses_edit_data()
   {

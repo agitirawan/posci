@@ -1,58 +1,56 @@
 <!-- Page Heading -->
 <div class="container-fluid">
 
-    <h1 class="h3 mb-2 text-gray-800">Tabel pembayaran</h1>
+    <h1 class="h3 mb-2 text-gray-800">Data Pembayaran</h1>
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Tabel Data pembayaran</h6>
+            <a href="<?php echo base_url() ?>Pembayaran/tambah_pembayaran" class="btn btn-primary btn-sm float-right">Tambah Pembayaran</a>
         </div>
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">tabel data</h6>
-                <a href="<?php base_url() ?>Pembayaran/tambah_pembayaran" class="btn btn-primary btn-sm float-right">tambah</a>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td>Id Pembayaran</td>
+                            <td>Id transaksi</td>
+                            <td>Type</td>
+                            <td>Nominal</td>
+                            <td>Tanggal</td>
+                            <td>Setting</td>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tfoot>
+                        <?php
+                        $no = 1;
+                        foreach ($pembayaran as $pembayaran) { ?>
                             <tr>
-                                <td>id pembayaran</td>
-                                <td>id transaksi</td>
-                                <td>type</td>
-                                <td>nominal</td>
-                                <td>tanggal</td>
-                                <td>setting</td>
-
-
+                                <td><?= $no++; ?></td>
+                                <!-- <td><?= $pembayaran['id_pembayaran'] ?></td> -->
+                                <td><?= $pembayaran['id_transaksi'] ?></td>
+                                <td><?= $pembayaran['type'] ?></td>
+                                <td><?= $pembayaran['nominal'] ?></td>
+                                <td><?= $pembayaran['tanggal'] ?></td>
+                                <td>
+                                    <a href="<?php echo base_url() ?>Pembayaran/proses_edit/<?php echo $pembayaran['id_transaksi']; ?>" class="badge badge-success">Edit</a>
+                                    <a href="<?php echo base_url() ?>Pembayaran/proses_hapus/<?php echo $pembayaran['id_transaksi']; ?>" class="badge badge-danger" onclick="return confirm('Yakin Data ini akan dihapus ?')">Delete</a>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                        <tfoot>
-                            <?php
-                            $no = 1;
-                            foreach ($pembayaran as $pembayaran) { ?>
-                                <tr>
-                                    <td><?= $no++; ?></td>
-                                    <!-- <td><?= $pembayaran['id_pembayaran'] ?></td> -->
-                                    <td><?= $pembayaran['id_transaksi'] ?></td>
-                                    <td><?= $pembayaran['type'] ?></td>
-                                    <td><?= $pembayaran['nominal'] ?></td>
-                                    <td><?= $pembayaran['tanggal'] ?></td>
-                                    <td>
-                                        <a href="<?php echo base_url() ?>Pembayaran/proses_edit_datakasir/<?php echo $pembayaran['id_transaksi']; ?>" class=" budge badge-primary">edit</a>
-                                        <a href="<?php echo base_url() ?>Pembayaran/proses_hapus_datakasir/<?php echo $pembayaran['id_transaksi']; ?>" class="budge badge-primary">hapus</a>
-                                    </td>
-                                </tr>
-                            <?php } ?>
-                        </tfoot>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
+                        <?php } ?>
+                    </tfoot>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
         </div>
-
     </div>
+
+</div>
 </div>
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
@@ -76,17 +74,11 @@
         </div>
     </div>
 </div>
+<div>
+    <div>
 
-<!-- Bootstrap core JavaScript-->
-<script src="<?php base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
-<script src="<?php base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="<?php base_url() ?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="<?php base_url() ?>assets/js/sb-admin-2.min.js"></script>
-
+    </div>
+</div>
 </body>
 
 </html>
