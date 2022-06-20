@@ -24,7 +24,7 @@
         <div class="row mb-3">
             <label for="gambar" class="col-sm-2 col-form-label">gambar</label>
             <div class="col-sm-5">
-                <input type="file" class="form-control" name="userfile">
+                <input type="file" class="form-control" name="userfile" required="">
                 <br>
                 <button type="submit" class="btn btn-primary">Tambah</button>
                 <button type="reset" class="btn btn-danger">Reset</button>

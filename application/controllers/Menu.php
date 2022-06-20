@@ -70,13 +70,9 @@ class Menu extends CI_Controller
         'gambar' => $gambar,
         'status' => $status,
       );
+      $this->db->insert('menu', $data);
+      redirect('menu');
     }
-
-    $this->db->insert('menu', $data);
-    $this->load->view('templates/header');
-    $this->load->view('menu/index', $data);
-    $this->load->view('templates/footer');
-    redirect('menu');
   }
   public function edit_data($id_menu)
   {
