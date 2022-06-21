@@ -25,6 +25,7 @@ class Menu extends CI_Controller
   {
     parent::__construct();
     $this->load->model('Menu_model');
+    $this->load->model('Kategori_model');
   }
 
   public function index()
@@ -38,37 +39,38 @@ class Menu extends CI_Controller
   public function tambah_menu()
   {
     $data['menu'] = $this->Menu_model->all_menu();
+    $data['kategori'] = $this->Kategori_model->all_kategori();
     $this->load->view('templates/header');
     $this->load->view('menu/tambah_data', $data);
     $this->load->view('templates/footer');
   }
   public function proses_tambah_menu()
   {
-    $config['upload_path']          = './gambar/';
-    $config['allowed_types']        = 'gif|jpg|PNG';
-    $config['max_size']             = 2048;
+    $config['upload_path']          = './assets/gambar/';
+    $config['allowed_types']        = 'gif|jpg|png|jpeg';
+    $config['max_size']             = 10000;
 
     $this->load->library('upload', $config);
 
     if (!$this->upload->do_upload('userfile')) {
       echo "gagal upload";
+
+      echo $this->upload->display_errors();
     } else {
       $gambar = $this->upload->data();
       $gambar = $gambar['file_name'];
-      $id_kategori = $this->input->post('id_kategori', TRUE);
+      $id_kategori = $this->input->post('id_ketergori', TRUE);
       $nam_menu = $this->input->post('nam_menu', TRUE);
       $harga = $this->input->post('harga', TRUE);
       $jumlah = $this->input->post('jumlah', TRUE);
-      $gambar = $this->input->post('gambar', TRUE);
-      $status = $this->input->post('status', TRUE);
 
       $data = array(
-        'id_kategori' => $id_kategori,
+        'id_kategori' => $id_kategori ,
         'nam_menu' => $nam_menu,
         'harga' => $harga,
         'jumlah' => $jumlah,
         'gambar' => $gambar,
-        'status' => $status,
+        'status' => "dijual",
       );
       $this->db->insert('menu', $data);
       redirect('menu');

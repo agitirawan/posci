@@ -34,7 +34,7 @@
                                 <td><?= $menu['nam_menu'] ?></td>
                                 <td><?= $menu['harga'] ?></td>
                                 <td><?= $menu['jumlah'] ?></td>
-                                <td><img src="<?php echo base_url() . '/gambar/' . $menu['gambar'] ?>" style="width:200px"></td>
+                                <td><img src="<?php echo base_url() . '/assets/gambar/' . $menu['gambar'] ?>" style="width:75px"></td>
                                 <td><?= $menu['status'] ?></td>
                                 <td>
                                     <a href="<?php echo base_url() ?>menu/edit_data/<?php echo $menu['id_menu']; ?>" class="badge badge-success">Edit</a></a>

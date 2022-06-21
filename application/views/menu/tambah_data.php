@@ -2,23 +2,19 @@
     <h3>Halaman Tambah Menu</h3>
     <hr>
     <br>
-    <form method="post" action="<?php echo base_url() ?>menu/proses_tambah_menu">
-        <div class="form-group">
-            <label>Pilih Kategori</label>
+    <form method="post" action="<?php echo base_url() ?>menu/proses_tambah_menu" enctype="multipart/form-data">
+       
+        <div class="row mb-3">
+            <label for="nam_menu" class="col-sm-2 col-form-label">Nama Menu</label>
+            <div class="col-sm-5">
             <select name='id_ketergori' class='form-control'>
-                <?php
-                if ($menu['id_ketegori'] == 'makanan') { ?>
-                    <option value='makanan' selected>makanan</option>
-                    <option value='minuman'>minuman</option>;
-                    <option value='paket'>paket</option>;
-                <?php } else { ?>
-                    <option value='makanan'>Makanan</option>
-                    <option value='minuman' selected>minuman</option>;
-                    <option value='paket' selected>paket</option>;
-                <?php
-                }
-                ?>
+                
+            <?php foreach ( $kategori AS $isi ) : ?>
+                <option value='<?php echo $isi['id_kategori'] ?>'><?php echo $isi['nama'] ?></option>
+            <?php endforeach; ?>
+            
             </select>
+            </div>
         </div>
         <div class="row mb-3">
             <label for="nam_menu" class="col-sm-2 col-form-label">Nama Menu</label>
