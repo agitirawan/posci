@@ -18,7 +18,18 @@
         <div class="row mb-3">
             <label for="tyep" class="col-sm-2 col-form-label">Type</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" name="type">
+                <select name='type' class="form-control">
+                    <?php
+                    if ($pembayaran['type'] == 'debit') { ?>
+                        <option value='debit' selected>debit</option>
+                        <option value='cash'>cash</option>;
+                    <?php } else { ?>
+                        <option value='debit'>debit</option>
+                        <option value='cash' selected>cash</option>;
+                    <?php
+                    }
+                    ?>
+                </select>
             </div>
         </div>
         <div class="row mb-3">

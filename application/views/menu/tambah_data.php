@@ -3,6 +3,23 @@
     <hr>
     <br>
     <form method="post" action="<?php echo base_url() ?>menu/proses_tambah_menu">
+        <div class="form-group">
+            <label>Pilih Kategori</label>
+            <select name='id_ketergori' class='form-control'>
+                <?php
+                if ($menu['id_ketegori'] == 'makanan') { ?>
+                    <option value='makanan' selected>makanan</option>
+                    <option value='minuman'>minuman</option>;
+                    <option value='paket'>paket</option>;
+                <?php } else { ?>
+                    <option value='makanan'>Makanan</option>
+                    <option value='minuman' selected>minuman</option>;
+                    <option value='paket' selected>paket</option>;
+                <?php
+                }
+                ?>
+            </select>
+        </div>
         <div class="row mb-3">
             <label for="nam_menu" class="col-sm-2 col-form-label">Nama Menu</label>
             <div class="col-sm-5">
