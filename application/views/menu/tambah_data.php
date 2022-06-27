@@ -3,6 +3,7 @@
     <hr>
     <br>
     <form method="post" action="<?php echo base_url() ?>menu/proses_tambah_menu" enctype="multipart/form-data">
+<<<<<<< HEAD
 
         <div class="row mb-3">
             <label for="nam_menu" class="col-sm-2 col-form-label">Nama Menu</label>
@@ -14,6 +15,19 @@
                     <?php endforeach; ?>
 
                 </select>
+=======
+       
+        <div class="row mb-3">
+            <label for="nam_menu" class="col-sm-2 col-form-label">Nama Menu</label>
+            <div class="col-sm-5">
+            <select name='id_ketergori' class='form-control'>
+                
+            <?php foreach ( $kategori AS $isi ) : ?>
+                <option value='<?php echo $isi['id_kategori'] ?>'><?php echo $isi['nama'] ?></option>
+            <?php endforeach; ?>
+            
+            </select>
+>>>>>>> 4e1a8de22f91bac79195a85dcc055b162f2584cd
             </div>
         </div>
         <div class="row mb-3">
