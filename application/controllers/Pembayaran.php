@@ -46,18 +46,7 @@ class Pembayaran extends CI_Controller
     $this->Pembayaran_model->proses_tambah_pembayaran();
     redirect('pembayaran');
   }
-  public function edit_data($id_pemabayaran)
-  {
-    $data['kategori'] = $this->Pembayaran_model->proses_id_pembayaran($id_pemabayaran);
-    $this->load->view('templates/header');
-    $this->load->view('pembayaran/edit_data', $data);
-    $this->load->view('templates/footer');
-  }
-  public function proses_edit_pembayaran()
-  {
-    $this->Pembayaran_model->proses_edit_data();
-    redirect('pembayaran');
-  }
+
   public function proses_hapus_data($id_pemabayaran)
   {
     $this->Pembayaran_model->proses_hapus_data($id_pemabayaran);

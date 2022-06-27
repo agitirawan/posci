@@ -30,9 +30,45 @@ class Data_kasir_model extends CI_Model
 
 
   // ------------------------------------------------------------------------
-  public function SemuaData_transaksi()
+  public function  all_transaksi()
   {
     return $this->db->get('transksi')->result_array();
+  }
+  public function proses_tambah_transaksi()
+  {
+    $data = [
+      "id_transaksi" => $this->input->post('id_transaksi'),
+      "id_user" => $this->input->post('id_user'),
+      "telepon" => $this->input->post('telepon'),
+      "type" => $this->input->post('type'),
+      "status" => $this->input->post('status'),
+      "tanggal" => $this->input->post('tanggal'),
+    ];
+    $this->db->insert('transksi', $data);
+  }
+
+  public function proses_id_transaksi($id_transaksi)
+  {
+    return $this->db->get_where('trasksi', ['id_transaksi' => $id_transaksi])->row_array();
+  }
+
+  public function proses_hapus_data($id_transaksi)
+  {
+    $this->db->where('id_transaksi', $id_transaksi);
+    $this->db->delete('transksi');
+  }
+  public function proses_edit_data()
+  {
+    $data = [
+      "id_transaksi" => $this->input->post('id_transaksi'),
+      "id_user" => $this->input->post('id_user'),
+      "telepon" => $this->input->post('telepon'),
+      "type" => $this->input->post('type'),
+      "status" => $this->input->post('status'),
+      "tanggal" => $this->input->post('tanggal'),
+    ];
+    $this->db->where('id_transaksi', $this->input->post('id_transaksi'));
+    $this->db->update('transksi', $data);
   }
 
   // ------------------------------------------------------------------------

@@ -34,7 +34,7 @@ class Auth extends CI_Controller
         } elseif ($this->session->userdata('level') == "kasir") {
             redirect('kasir', 'refresh');
         } elseif ($this->session->userdata('level') == "user") {
-            redirect('home', 'resfresh');
+            redirect('user/menu', 'resfresh');
         }
 
         $data['title'] = 'admin Login';
@@ -50,7 +50,7 @@ class Auth extends CI_Controller
     public function register()
     {
         if ($this->session->userdata('level') == "user") {
-            redirect('admin', 'refresh');
+            redirect('user', 'refresh');
         }
         //$data['title'] = 'User Register';
         //$this->load->view('auth/register.php', $data);
@@ -75,7 +75,7 @@ class Auth extends CI_Controller
             } elseif ($this->session->userdata('level') == "kasir") {
                 redirect('kasir');
             } elseif ($this->session->userdata('level') == "user") {
-                redirect('home');
+                redirect('user');
             }
         } else {
             $data['pesan'] = 'email dan password anda salah';

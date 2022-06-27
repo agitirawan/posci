@@ -1,14 +1,25 @@
-<div clas="container-fluid">
-
-    <h3>Halaman Edit Data</h3>
+<div class="container-fluid">
+    <h3>Halaman Edit Menu</h3>
     <hr>
     <br>
-    <form method="post" action="<?php base_url() ?>menu/edit_data">
+    <form method="post" action="<?php echo base_url() ?>menu/edit_data" enctype="multipart/form-data">
+
         <div class="row mb-3">
-            <input type="hidden" name="id_menu" value="<?php echo $menu['id_menu'] ?>">
             <label for="nam_menu" class="col-sm-2 col-form-label">Nama Menu</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" placeholder="nam_menu" name="nam_menu">
+                <select name='id_ketergori' class='form-control'>
+
+                    <?php foreach ($kategori as $isi) : ?>
+                        <option value='<?php echo $isi['id_kategori'] ?>'><?php echo $isi['nama'] ?></option>
+                    <?php endforeach; ?>
+
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="nam_menu" class="col-sm-2 col-form-label">Nama Menu</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="nam_menu">
             </div>
         </div>
         <div class="row mb-3">
@@ -26,18 +37,28 @@
         <div class="row mb-3">
             <label for="gambar" class="col-sm-2 col-form-label">gambar</label>
             <div class="col-sm-5">
-                <input type="file" class="form-control" name="userfile ">
+                <input type="file" class="form-control" name="userfile" required="">
+                <img src="<?php echo base_url() . '/assets/gambar/' . $menu['gambar'] ?>" style="width:75px">
+                <br>
+                <button type="submit" class="btn btn-primary">Ubah</button>
+                <button type="reset" class="btn btn-danger">Reset</button>
+            </div>
+            <div class="form-group">
+                <label>status</label>
+                <select name='status' class='form-control'>
+                    <?php
+                    if ($status['status'] == 'dijual') { ?>
+                        <option value='dijual' selected>dijual</option>
+                        <option value='disimpan'>disimpan</option>;
+                    <?php } else { ?>
+                        <option value='dijual'>dijual</option>
+                        <option value='disimpan' selected>disimpan</option>;
+                    <?php
+                    }
+                    ?>
+                </select>
             </div>
         </div>
-        <div class="row mb-3">
-            <br>
-            <button type="submit" class="btn btn-primary">ubah</button>
-            <button type="reset" class="btn btn-danger">Reset</button>
-            <div></div>
     </form>
-    <div>
-        <div>
-            <div></div>
-        </div>
-    </div>
+</div>
 </div>

@@ -6,7 +6,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Tabel Data Transkasi</h6>
-            <a href="<?php base_url() ?>transksi/tambah_transaksi" class="btn btn-primary btn-sm float-right">tambah</a>
+            <a href="<?php base_url() ?>data_kasir/tambah_transaksi" class="btn btn-primary btn-sm float-right">tambah</a>
         </div>
         <div class="card-body">
             <div class="card-body">
@@ -38,8 +38,8 @@
                                     <td><?= $transksi['status'] ?></td>
                                     <td><?= $transksi['tanggal'] ?></td>
                                     <td>
-                                        <a href="<?php echo base_url() ?>Kasir/proses_edit/<?php echo $transksi['id_transaksi']; ?>" class="badge badge-success">Edit</a>
-                                        <a href="<?php echo base_url() ?>Kasir/proses_hapus/<?php echo $transksi['id_transaksi']; ?>" class="badge badge-danger" onclick="return confirm('Yakin Data ini akan dihapus ?')">Delete</a>
+                                        <a href="<?php echo base_url() ?>data_kasir/proses_edit_data/<?php echo $transksi['id_transaksi']; ?>" class="badge badge-success">Edit</a>
+                                        <a href="<?php echo base_url() ?>data_kasir/proses_hapus/<?php echo $transksi['id_transaksi']; ?>" class="badge badge-danger" onclick="return confirm('Yakin Data ini akan dihapus ?')">Delete</a>
                                     </td>
                                 </tr>
                             <?php } ?>
