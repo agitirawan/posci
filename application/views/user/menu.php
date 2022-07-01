@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="d-flex border-top">
                                         <small class="w-50 text-center border-end py-2">
-                                            <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                            <a button class="text-body" href="<?php echo base_url() ?>"></ii class="fa fa-shopping-bag text-primary me-2">View detail</a>
                                         </small>
                                         <small class="w-50 text-center py-2">
                                             <a button class="text-body" href="<?php echo base_url('menu/proses_tambah_keranjang/' . $menu['id_menu']) ?>"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
@@ -568,3 +568,21 @@
         </div>
     </div>
     <!-- Product End -->
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="<?= base_url('auth/logout'); ?>">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -49,6 +49,9 @@ class Auth_model extends CI_Model
         ];
         $this->db->insert('user', $data);
     }
+    public function logout()
+    {
+    }
 }
 
 /* End of file Auth_model.php */

@@ -30,14 +30,14 @@ class Kasir extends CI_Controller
   public function index()
   {
     $this->load->view('kasir/template/header');
-    $this->load->view('kasir/index');
+    // $this->load->view('kasir/index');
     $this->load->view('kasir/template/footer');
   }
   public function ordermenu()
   {
-    $this->load->view('kasir/template/header');
+    // $this->load->view('kasir/template/header');
     $this->load->view('kasir/ordermenu');
-    $this->load->view('kasir/template/footer');
+    // $this->load->view('kasir/template/footer');
   }
 }
 

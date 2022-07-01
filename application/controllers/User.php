@@ -27,6 +27,7 @@ class User extends CI_Controller
     $this->load->model('User_model');
     $this->load->library('cart');
     $this->load->model('Shoppingcart_model');
+    $this->load->model('Detail_model');
   }
 
   public function index()
@@ -72,6 +73,29 @@ class User extends CI_Controller
     $this->load->view('user/template/header');
     $this->load->view('user/pembayaran');
     $this->load->view('user/template/footer');
+  }
+  public function detail_view()
+  {
+    $this->load->view('user/template/header');
+    $this->load->view('user/detail_view');
+    $this->load->view('user/template/footer');
+  }
+  public function detail()
+  {
+    $data['proses'] = $this->Detail_model->proses_detail();
+    $data['content'] = "user/menu";
+    $this->load->view('user/menu', $data);
+  }
+  public function detail_tampil($id_menu)
+  {
+    $detail = $this->Detail_model->get_detail($id_menu);
+    $data['menu'] = $detail;
+    $this->load->view('user/menu', $data);
+  }
+  public function logout()
+  {
+    $this->session->sess_destroy();
+    redirect('auth');
   }
 }
 

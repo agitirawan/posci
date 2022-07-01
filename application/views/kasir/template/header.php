@@ -9,9 +9,9 @@
     <meta name="author" content="">
     <link href="<?php base_url() ?>assets/kasir/img/logo/kasir.png" rel="icon">
     <title>RuangKasir - Dashboard</title>
-    <link href="<?php base_url() ?>assets/kasir/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="<?php base_url() ?>assets/kasir/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="<?php base_url() ?>assets/kasir/css/ruang-admin.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/kasir/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url() ?>assets/kasir/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url() ?>assets/kasir/css/ruang-admin.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -43,7 +43,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Dashboard Kasir</h6>
                         <a class="collapse-item" href="<?php base_url() ?>monitoring">Monitoring</a>
-                        <a class="collapse-item" href="<?php base_url() ?>ordermenu">Order Menu</a>
+                        <a class="collapse-item" href="<?php echo base_url() ?>kasir/ordermenu">Order Menu</a>
                     </div>
                 </div>
 
