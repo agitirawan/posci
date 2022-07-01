@@ -66,6 +66,8 @@ class Auth extends CI_Controller
         if ($ceklogin) {
             foreach ($ceklogin as $row);
             //kita set userdata pada session dengan nama user dan isi uername kita isikan username yang ada pada $row
+            $this->session->set_userdata('id_user', $row->id_user);
+            $this->session->set_userdata('nama', $row->nama);
             $this->session->set_userdata('kasir', $row->username);
             $this->session->set_userdata('level', $row->level);
 

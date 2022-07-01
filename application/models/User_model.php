@@ -38,6 +38,15 @@ class User_model extends CI_Model
 
     return $this->db->get('kategori')->result_array();
   }
+
+
+  // ambil data menu berdasarkan id_kategori
+  public function ambil_data_menu_Id_kategori( $id_kategori ) {
+
+    $where = ['id_kategori' => $id_kategori];
+    $this->db->where( $where );
+    return $this->db->get('menu')->result_array();
+  }
 }
 
 /* End of file User_model.php */

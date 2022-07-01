@@ -64,7 +64,22 @@ class Pembayaran_model extends CI_Model
 
 
 
+
+
+
   // ------------------------------------------------------------------------
+  // TRANSAKSI
+
+  public function insert_transaksi( $transaksi ) {
+
+    $this->db->insert( "transaksi", $transaksi );
+    return $this->db->insert_id();
+  }
+  
+  public function insert_detail_transaksi( $detail_transaksi ) {
+
+    $this->db->insert_batch( "transaksi_detail", $detail_transaksi );
+  }
 
 }
 
