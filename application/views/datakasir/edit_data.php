@@ -5,8 +5,8 @@
     <br>
     <form method="post" action="<?php base_url() ?>data_kasir/edit_data">
         <div class="row mb-3">
-            <input type="hidden" name="id_transaksi" value="<?php echo $transksi['id_transaksi'] ?>">
-            <label for="id_transaksi" class="col-sm-2 col-form-label">Id Transaksi</label>
+            <input type="hidden" name="id_transaksi" value="<?php echo $transaksi['id_transaksi'] ?>">
+            <label for="id_transaksi" class="col-sm-2 col-form-label">Id transaksi</label>
             <div class="col-sm-5">
                 <input type="number" class="form-control" placeholder="id_transaksi" name="id_transaksi">
             </div>

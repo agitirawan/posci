@@ -32,7 +32,7 @@ class Data_kasir_model extends CI_Model
   // ------------------------------------------------------------------------
   public function  all_transaksi()
   {
-    return $this->db->get('transksi')->result_array();
+    return $this->db->get('transaksi')->result_array();
   }
   public function proses_tambah_transaksi()
   {
@@ -49,13 +49,13 @@ class Data_kasir_model extends CI_Model
 
   public function proses_id_transaksi($id_transaksi)
   {
-    return $this->db->get_where('trasksi', ['id_transaksi' => $id_transaksi])->row_array();
+    return $this->db->get_where('transaksi', ['id_transaksi' => $id_transaksi])->row_array();
   }
 
   public function proses_hapus_data($id_transaksi)
   {
     $this->db->where('id_transaksi', $id_transaksi);
-    $this->db->delete('transksi');
+    $this->db->delete('transaksi');
   }
   public function proses_edit_data()
   {
@@ -68,7 +68,7 @@ class Data_kasir_model extends CI_Model
       "tanggal" => $this->input->post('tanggal'),
     ];
     $this->db->where('id_transaksi', $this->input->post('id_transaksi'));
-    $this->db->update('transksi', $data);
+    $this->db->update('transaksi', $data);
   }
 
   // ------------------------------------------------------------------------

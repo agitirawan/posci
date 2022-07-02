@@ -31,8 +31,10 @@
                         $total = 0;
                         foreach ($this->cart->contents() as $cart) :
 
-                            $total += ($cart['subtotal'] * $cart['qty']);
+                            $total += $cart['subtotal'];
                         ?>
+
+                        <form action="<?php echo base_url('menu/update/'. $cart['rowid']) ?>" method="POST">
                          <tr>
                              <td>
                                  <img src="<?php echo base_url('assets/gambar/' . $cart['coupon']) ?>" alt="foto" style="width: 100px">
@@ -44,25 +46,21 @@
                              </td>
                              <td style="vertical-align: middle;">
                                  <small>Jumlah</small>
-                                 <input id=demoInput type=number min="0" max="110" value="<?php echo $cart['qty'] ?>">
-                                 <button onclick="increment()">+</button>
-                                 <button onclick="decrement()">-</button>
-                                 <script>
-                                     function increment() {
-                                         document.getElementById('demoInput').stepUp();
-                                     }
-
-                                     function decrement() {
-                                         document.getElementById('demoInput').stepDown();
-                                     }
-                                 </script>
+                                 <input id="demoInput-<?php echo $cart['rowid'] ?>" name="permintaan" type=number min="0" max="110" value="<?php echo $cart['qty'] ?>">
+                                 <button onclick="increment('<?php echo $cart['rowid'] ?>')" type="button">+</button>
+                                 <button onclick="decrement('<?php echo $cart['rowid'] ?>')" type="button">-</button>
+                                
                              </td>
                              <td style="vertical-align: middle;">
                                  <small>Total</small>
                                  <h4>Rp. <?php echo number_format($cart['subtotal'], 2) ?></h4>
                              </td>
-                             <td><a href="<?php echo base_url('menu/remove/' . $cart['rowid']) ?>" class="" onclick="return confirm('Yakin Data ini akan dihapus ?')">Delete</a></td>
+                             <td>
+                                <button class="btn btn-primary">Update</button>
+                                <a class="btn btn-danger" href="<?php echo base_url('menu/remove/' . $cart['rowid']) ?>" onclick="return confirm('Yakin Data ini akan dihapus ?')">Delete</a>
+                            </td>
                          </tr>
+                         </form>
                      <?php endforeach; ?>
                  </table>
 
@@ -93,3 +91,19 @@
          </div>
      </div>
  </div>
+
+
+
+
+
+
+
+ <script>
+                                     function increment( rowid ) {
+                                     	document.getElementById('demoInput-' + rowid).stepUp();
+                                     }
+
+                                     function decrement( rowid ) {
+                                     	document.getElementById('demoInput-' + rowid).stepDown();
+                                     }
+                                 </script>

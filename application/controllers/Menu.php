@@ -59,7 +59,7 @@ class Menu extends CI_Controller
     } else {
       $gambar = $this->upload->data();
       $gambar = $gambar['file_name'];
-      $id_kategori = $this->input->post('id_ketergori', TRUE);
+      $id_kategori = $this->input->post('id_kategori', TRUE);
       $nam_menu = $this->input->post('nam_menu', TRUE);
       $harga = $this->input->post('harga', TRUE);
       $jumlah = $this->input->post('jumlah', TRUE);
@@ -135,5 +135,22 @@ class Menu extends CI_Controller
     $this->session->set_flashdata('msg', $html);
 
     redirect('user/shoppingcart');
+  }
+
+
+
+  public function update( $rowid ) {
+
+    $permintaan = $this->input->post('permintaan');
+
+    $this->load->library('cart');
+
+    $data = array(
+      'rowid'      => $rowid,
+      'qty'     => $permintaan,
+    );
+    $this->cart->update($data);
+    redirect('user/shoppingcart');
+
   }
 }

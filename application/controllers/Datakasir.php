@@ -48,7 +48,7 @@ class Datakasir extends CI_Controller
   }
   public function edit_data($id_transaksi)
   {
-    $data['transksi'] = $this->Data_kasir_model->proses_id_transaksi($id_transaksi);
+    $data['transaksi'] = $this->Data_kasir_model->proses_id_transaksi($id_transaksi);
     $this->load->view('templates/header');
     $this->load->view('data_kasir/edit_data', $data);
     $this->load->view('templates/footer');
@@ -56,13 +56,13 @@ class Datakasir extends CI_Controller
   public function proses_edit_data()
   {
     $this->Data_kasir_model->proses_edit_data();
-    redirect('transksi');
+    redirect('transaksi');
   }
 
   public function proses_hapus_data($id_transaksi)
   {
     $this->Data_kasir_model->proses_hapus_data($id_transaksi);
-    redirect('transksi');
+    redirect('transaksi');
   }
 }
 

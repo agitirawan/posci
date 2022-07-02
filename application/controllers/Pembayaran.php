@@ -52,6 +52,47 @@ class Pembayaran extends CI_Controller
     $this->Pembayaran_model->proses_hapus_data($id_pemabayaran);
     redirect('pembayaran');
   }
+
+
+
+
+  // transaksi
+  public function transaksi() {
+
+    $input = $this->input->post();
+    
+    $transaksi = array(
+
+      'id_user' => $this->session->userdata('id_user'),
+      'type'    => $this->input->post('type'),
+      'status'  => "proses"
+    );
+
+    // insert 1
+    $id_transaksi = $this->Pembayaran_model->insert_transaksi( $transaksi );
+
+
+    // insert 2
+    $detail_transaksi = array();
+    foreach ($this->cart->contents() as $cart){
+
+      array_push( $detail_transaksi, array(
+
+        'id_transaksi'  => $id_transaksi,
+        'id_menu'       => $cart['id'],
+        'jumlah'        => $cart['qty']
+      ) );
+    }
+
+
+    $this->Pembayaran_model->insert_detail_transaksi( $detail_transaksi );
+    
+    // bersihkan keranjang
+    $this->cart->destroy();
+
+    // kembali ke menu
+    redirect('user/menu');
+  }
 }
 
 
