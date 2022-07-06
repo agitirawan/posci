@@ -63,6 +63,7 @@ class Pembayaran extends CI_Controller
     
     $transaksi = array(
 
+      'nama'    => $this->input->post('nama'),
       'id_user' => $this->session->userdata('id_user'),
       'type'    => $this->input->post('type'),
       'status'  => "proses"
