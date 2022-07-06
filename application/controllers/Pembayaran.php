@@ -57,36 +57,38 @@ class Pembayaran extends CI_Controller
 
 
   // transaksi
-  public function transaksi() {
+  public function transaksi()
+  {
 
     $input = $this->input->post();
-    
+
     $transaksi = array(
 
-      'id_user' => $this->session->userdata('id_user'),
+      'id_user'       => $this->session->userdata('id_user'),
+      'jenis_pesanan' => "online",
       'type'    => $this->input->post('type'),
       'status'  => "proses"
     );
 
     // insert 1
-    $id_transaksi = $this->Pembayaran_model->insert_transaksi( $transaksi );
+    $id_transaksi = $this->Pembayaran_model->insert_transaksi($transaksi);
 
 
     // insert 2
     $detail_transaksi = array();
-    foreach ($this->cart->contents() as $cart){
+    foreach ($this->cart->contents() as $cart) {
 
-      array_push( $detail_transaksi, array(
+      array_push($detail_transaksi, array(
 
         'id_transaksi'  => $id_transaksi,
         'id_menu'       => $cart['id'],
         'jumlah'        => $cart['qty']
-      ) );
+      ));
     }
 
 
-    $this->Pembayaran_model->insert_detail_transaksi( $detail_transaksi );
-    
+    $this->Pembayaran_model->insert_detail_transaksi($detail_transaksi);
+
     // bersihkan keranjang
     $this->cart->destroy();
 

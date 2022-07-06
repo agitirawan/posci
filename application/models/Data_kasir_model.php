@@ -34,6 +34,27 @@ class Data_kasir_model extends CI_Model
   {
     return $this->db->get('transaksi')->result_array();
   }
+
+  public function transaksi_detail($id_transaksi)
+  {
+
+    $this->db->where('id_transaksi', $id_transaksi);
+    return $this->db->get('transaksi')->row_array();
+  }
+
+
+  public function transaksi_detail_menu($id_transaksi)
+  {
+
+    $query = $this->db->select('transaksi_detail.*, menu.nam_menu, harga, gambar, kategori.*')->from('transaksi_detail')
+      ->join('menu', 'menu.id_menu = transaksi_detail.id_menu')
+      ->join('kategori', 'kategori.id_kategori = menu.id_kategori')
+      ->where('transaksi_detail.id_transaksi', $id_transaksi)
+      ->get();
+
+    return $query->result_array();
+  }
+
   public function proses_tambah_transaksi()
   {
     $data = [

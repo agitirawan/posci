@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="<?php base_url() ?>assets/kasir/img/logo/kasir.png" rel="icon">
+    <link href="<?php base_url() ?>assets/kasir/img/logo/logo.png" rel="icon">
     <title>RuangKasir - Dashboard</title>
-    <link href="<?php echo base_url() ?>assets/kasir/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url() ?>assets/kasir/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url() ?>assets/kasir/css/ruang-admin.min.css" rel="stylesheet">
+    <link href="<?php base_url() ?>assets/kasir/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php base_url() ?>assets/kasir/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php base_url() ?>assets/kasir/css/ruang-admin.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -20,7 +20,7 @@
         <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon">
-                    <img src="<?php base_url() ?>assets/kasir/img/logo/kasir.png">
+                    <img src="<?php base_url() ?>assets/kasir/img/logo/logo2.png">
                 </div>
                 <div class="sidebar-brand-text mx-3">RuangKasir</div>
             </a>
@@ -43,11 +43,68 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Dashboard Kasir</h6>
                         <a class="collapse-item" href="<?php base_url() ?>monitoring">Monitoring</a>
-                        <a class="collapse-item" href="<?php echo base_url() ?>kasir/ordermenu">Order Menu</a>
+                        <a class="collapse-item" href="<?php base_url() ?>include/ordermenu">Order Menu</a>
                     </div>
                 </div>
-
-                <div class="version" id="version-ruangadmin"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true" aria-controls="collapseForm">
+                    <i class="fab fa-fw fa-wpforms"></i>
+                    <span>Forms</span>
+                </a>
+                <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Forms</h6>
+                        <a class="collapse-item" href="form_basics.html">Form Basics</a>
+                        <a class="collapse-item" href="form_advanceds.html">Form Advanceds</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true" aria-controls="collapseTable">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tables</span>
+                </a>
+                <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">OrderMenu<ordermenu>/h6>
+                                <a class="collapse-item" href="<?php base_url() ?>ordermenu">Order Menu</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ui-colors.html">
+                    <i class="fas fa-fw fa-palette"></i>
+                    <span>UI Colors</span>
+                </a>
+            </li>
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">
+                Examples
+            </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true" aria-controls="collapsePage">
+                    <i class="fas fa-fw fa-columns"></i>
+                    <span>Pages</span>
+                </a>
+                <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Example Pages</h6>
+                        <a class="collapse-item" href="login.html">Login</a>
+                        <a class="collapse-item" href="register.html">Register</a>
+                        <a class="collapse-item" href="404.html">404 Page</a>
+                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Charts</span>
+                </a>
+            </li>
+            <hr class="sidebar-divider">
+            <div class="version" id="version-ruangadmin"></div>
         </ul>
         <!-- Sidebar -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -513,31 +570,33 @@
                     </div>
                     <!--Row-->
 
-                </div>
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <p>Do you like this template ? you can download from <a href="https://github.com/indrijunanda/RuangAdmin" class="btn btn-primary btn-sm" target="_blank"><i class="fab fa-fw fa-github"></i>&nbsp;GitHub</a></p>
+                        </div>
+                    </div>
 
-                <!-- Modal Logout -->
-                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Are you sure you want to logout?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                                <a href="<? base_url('Auth/logout') ?>" class="btn btn-primary">Logout</a>
+                    <!-- Modal Logout -->
+                    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure you want to logout?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                                    <a href="<? base_url('Auth/logout') ?>" class="btn btn-primary">Logout</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
+                <!---Container Fluid-->
             </div>
-            <!---Container Fluid-->
-        </div>
-    </div>
-    </div>

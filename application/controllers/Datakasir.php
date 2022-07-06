@@ -25,15 +25,69 @@ class Datakasir extends CI_Controller
   {
     parent::__construct();
     $this->load->model('Data_kasir_model');
+    $this->load->model('User_model');
   }
 
   public function index()
   {
-    $data['transksi'] = $this->Data_kasir_model->all_transaksi();
+    $transaksi = $this->Data_kasir_model->all_transaksi();
+
+    $data_transaksi = array();
+    foreach ($transaksi as $tr) {
+
+      // cek apakah pembeli adalah user ? 
+      $nama = $tr['nama'];
+      if ($tr['jenis_pesanan'] == "online") {
+
+        $user = $this->User_model->user_berdasarkan_id($tr['id_user'])->row_array();
+        $nama = $user['nama'];
+      }
+
+      array_push($data_transaksi, array(
+
+        'transaksi' => $tr,
+        'user'      => $nama
+      ));
+    }
+
+    $data['transaksi'] = $data_transaksi;
+
+
     $this->load->view('templates/header.php');
     $this->load->view('datakasir/index.php', $data);
     $this->load->view('templates/footer.php');
   }
+
+
+  public function detail($id_transaksi)
+  {
+
+    $transaksi = $this->Data_kasir_model->transaksi_detail($id_transaksi);
+    $transaksi_detail = $this->Data_kasir_model->transaksi_detail_menu($id_transaksi);
+
+    // cek apakah pembeli adalah user ? 
+    $nama = $transaksi['nama'];
+    $user = [];
+    if ($transaksi['jenis_pesanan'] == "online") {
+
+      $user = $this->User_model->user_berdasarkan_id($transaksi['id_user'])->row_array();
+      $nama = $user['nama'];
+    }
+
+    $data['transaksi'] = $transaksi;
+    $data['transaksi_detail'] = $transaksi_detail;
+    $data['user'] = $user;
+    $data['nama'] = $nama;
+
+    $this->load->view('templates/header.php');
+    $this->load->view('datakasir/detail_transaksi', $data);
+    $this->load->view('templates/footer.php');
+  }
+
+
+
+
+
   public function tambah_transaksi()
   {
     $data['transksi'] = $this->Data_kasir_model->all_transaksi();

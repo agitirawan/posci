@@ -19,6 +19,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User_model extends CI_Model
 {
+
+
+  public function user_berdasarkan_id($id_user)
+  {
+
+    $this->db->where('id_user', $id_user);
+    return $this->db->get('user');
+  }
+
+
+
+
   public function getMenu()
   {
     return $this->db->get('menu')->result_array();
@@ -41,10 +53,11 @@ class User_model extends CI_Model
 
 
   // ambil data menu berdasarkan id_kategori
-  public function ambil_data_menu_Id_kategori( $id_kategori ) {
+  public function ambil_data_menu_Id_kategori($id_kategori)
+  {
 
     $where = ['id_kategori' => $id_kategori];
-    $this->db->where( $where );
+    $this->db->where($where);
     return $this->db->get('menu')->result_array();
   }
 }

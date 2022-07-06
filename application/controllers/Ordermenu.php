@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Controller Home
+ * Controller Ordermenu
  *
  * This controller for ...
  *
@@ -18,20 +18,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class Kasir extends CI_Controller
+class Ordermenu extends CI_Controller
 {
 
-    public function __construct()
-    {
-        parent::__construct();
-    }
+  public function __construct()
+  {
+    parent::__construct();
+  }
 
-    public function index()
-    {
-        $this->load->view('kasir');
-    }
+  public function index()
+  {
+    $this->load->view('include/header');
+    $this->load->view('kasir/ordermenu');
+    $this->load->view('include/footer');
+  }
 }
 
 
-/* End of file Home.php */
-/* Location: ./application/controllers/Home.php */
+/* End of file Ordermenu.php */
+/* Location: ./application/controllers/Ordermenu.php */

@@ -14,7 +14,7 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <td>id transaksi</td>
+                                <td>No</td>
                                 <td>id user</td>
                                 <td>type</td>
                                 <td>status</td>
@@ -28,18 +28,19 @@
                         <tfoot>
                             <?php
                             $no = 1;
-                            foreach ($transaksi as $transaksi) { ?>
+                            foreach ($transaksi as $nomor => $transaksi) { ?>
                                 <tr>
                                     <td><?= $no++; ?></td>
-                                    <!-- <td><?= $transaksi['id_transaksi'] ?></td> -->
-                                    <td><?= $transaksi['id_user'] ?></td>
-                                    <!-- <td><?= $transaksi['telepon'] ?></td> -->
-                                    <td><?= $transaksi['type'] ?></td>
-                                    <td><?= $transaksi['status'] ?></td>
-                                    <td><?= $transaksi['tanggal'] ?></td>
+                                    <!-- <td><?= $nomor + 1 ?></td> -->
+                                    <td><?= $transaksi['user'] ?></td>
+                                    <!-- <td><?= $transaksi['jenis_pesanan'] ?></td> -->
+                                    <td><?= $transaksi['transaksi']['type'] ?></td>
+                                    <td><?= $transaksi['transaksi']['status'] ?></td>
+                                    <td><?= $transaksi['transaksi']['tanggal'] ?></td>
                                     <td>
-                                        <a href="<?php echo base_url() ?>data_kasir/proses_edit_data/<?php echo $transaksi['id_transaksi']; ?>" class="badge badge-success">Edit</a>
-                                        <a href="<?php echo base_url() ?>data_kasir/proses_hapus/<?php echo $transaksi['id_transaksi']; ?>" class="badge badge-danger" onclick="return confirm('Yakin Data ini akan dihapus ?')">Delete</a>
+
+                                        <a href="<?php echo base_url() ?>datakasir/detail/<?php echo $transaksi['transaksi']['id_transaksi']; ?>" class="badge badge-info">Detail Pemesanan</a>
+                                        <a href="<?php echo base_url() ?>datakasir/selesaikan/<?php echo $transaksi['transaksi']['id_transaksi']; ?>" class="badge badge-danger" onclick="return confirm('Yakin Data ini akan dihapus ?')">Selesaikan Pesanan</a>
                                     </td>
                                 </tr>
                             <?php } ?>

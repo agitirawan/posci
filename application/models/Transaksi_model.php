@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Model Ordermenu_model
+ * Model Transaksi_model
  *
  * This Model for ...
  * 
@@ -16,7 +16,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class Ordermenu_model extends CI_Model
+class Transaksi_model extends CI_Model
 {
 
   // ------------------------------------------------------------------------
@@ -30,14 +30,15 @@ class Ordermenu_model extends CI_Model
 
 
   // ------------------------------------------------------------------------
-  public function index()
+  public function getdata_transaksi()
   {
-    // 
+    $data_transaksi_detail = $this->db->get('transaksi_detail');
+    return $data_transaksi_detail->result();
   }
 
   // ------------------------------------------------------------------------
 
 }
 
-/* End of file Ordermenu_model.php */
-/* Location: ./application/models/Ordermenu_model.php */
+/* End of file Transaksi_model.php */
+/* Location: ./application/models/Transaksi_model.php */

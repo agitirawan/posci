@@ -50,7 +50,7 @@ class Auth extends CI_Controller
     public function register()
     {
         if ($this->session->userdata('level') == "user") {
-            redirect('user', 'refresh');
+            redirect('admin', 'refresh');
         }
         //$data['title'] = 'User Register';
         //$this->load->view('auth/register.php', $data);
