@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Controller Home
+ * Controller Kasir
  *
  * This controller for ...
  *
@@ -24,7 +24,7 @@ class Kasir extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Ordermenu_model');
+
         $this->load->model('Metode_model');
         $this->load->model('Pemesanan_model');
     }
@@ -72,5 +72,5 @@ class Kasir extends CI_Controller
 }
 
 
-/* End of file Home.php */
-/* Location: ./application/controllers/Home.php */
+/* End of file Kasir.php */
+/* Location: ./application/controllers/Kasir.php */
