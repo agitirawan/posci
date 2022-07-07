@@ -2,25 +2,38 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 
+/**
+ *
+ * Controller Kasir
+ *
+ * This controller for ...
+ *
+ * @package   CodeIgniter
+ * @category  Controller CI
+ * @author    Setiawan Jodi <jodisetiawan@fisip-untirta.ac.id>
+ * @author    Raul Guerrero <r.g.c@me.com>
+ * @link      https://github.com/setdjod/myci-extension/
+ * @param     ...
+ * @return    ...
+ *
+ */
+
 class Kasir extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Ordermenu_model');
+
         $this->load->model('Metode_model');
         $this->load->model('Pemesanan_model');
     }
 
     public function index()
     {
-        // $this->load->view('kasir/template/header');
-        // // $this->load->view('kasir/index');
-        // $this->load->view('kasir/template/footer');
-
-        // sementara
-        $this->order();
+        $this->load->view('kasir/template/header');
+        // $this->load->view('kasir/index');
+        $this->load->view('kasir/template/footer');
     }
     public function ordermenu()
     {
@@ -56,20 +69,8 @@ class Kasir extends CI_Controller
         $this->Pemesanan_model->konfirmasi_pemesanan($id_transaksi, $status);
         redirect('kasir/order');
     }
-    public function history()
-    {
-        $this->load->view('kasir/template/template_header');
-        $this->load->view('kasir/history');
-        $this->load->view('kasir/template/template_footer');
-    }
-    public function transaksi()
-    {
-        $this->load->view('kasir/template/template_header');
-        $this->load->view('kasir/transaksi');
-        $this->load->view('kasir/template/template_footer');
-    }
 }
 
 
-/* End of file Home.php */
-/* Location: ./application/controllers/Home.php */
+/* End of file Kasir.php */
+/* Location: ./application/controllers/Kasir.php */

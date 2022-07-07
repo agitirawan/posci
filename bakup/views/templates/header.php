@@ -62,7 +62,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Custom Components:</h6> -->
                         <a class="collapse-item" href="<?php echo base_url() ?>kategori">Kategori</a>
-                        <a class="collapse-item" href="<?php echo base_url() ?>menu">Menu</a>
+                        <a class="collapse-item" href="<?php base_url() ?>menu">Menu</a>
                     </div>
                 </div>
             </li>
@@ -74,10 +74,9 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
                         <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
-                        <a class="collapse-item" href="<?php echo base_url() ?>pembayaran">Pembayaran</a>
-                        <a class="collapse-item" href="<?php echo base_url() ?>datakasir">Data Kasir</a>
+                        <a class="collapse-item" href="<?php base_url() ?>pembayaran">Pembayaran</a>
+                        <a class="collapse-item" href="<?php base_url() ?>datakasir">Data Kasir</a>
                     </div>
                 </div>
             </li>
@@ -90,9 +89,9 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Other Pages:</h6> -->
-                        <a class="collapse-item" href="<?php echo base_url() ?>transaksi">transaksi</a>
-                        <a class="collapse-item" href="<?php echo base_url() ?>pegawai">Pegawai</a>
-                        <a class="collapse-item" href="<?php echo base_url() ?>pendapatan">Pendapatan</a>
+                        <a class="collapse-item" href="<?php base_url() ?>transaksi">transaksi</a>
+                        <a class="collapse-item" href="<?php base_url() ?>pegawai">Pegawai</a>
+                        <a class="collapse-item" href="<?php base_url() ?>pendapatan">Pendapatan</a>
                     </div>
                 </div>
             </li>
