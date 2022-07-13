@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Model Shoopingcart_model
+ * Model History_model
  *
  * This Model for ...
  * 
@@ -16,7 +16,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class Shoppingcart_model extends CI_Model
+class History_model extends CI_Model
 {
 
   // ------------------------------------------------------------------------
@@ -33,29 +33,26 @@ class Shoppingcart_model extends CI_Model
   public function insert_data()
   {
     $insert_data = array(
-      "nam_menu" => $this->input->post('nam_menu'),
-      "harga" => $this->input->post('harga'),
-      "jumlah" => $this->input->post('jumlah'),
-      "gambar" => $this->input->post('gambar'),
+      "id_transaksi" => $this->input->post('id_transaksi'),
+      "nama" => $this->input->post('nama'),
+      "jenis_pesanan" => $this->input->post('jenis_pesanan'),
+      "id_user" => $this->input->post('id_user'),
+      "telpon" => $this->input->post('telpon'),
+      "type" => $this->input->post('id_user'),
       "status" => $this->input->post('status'),
+      "tanggal" => $this->input->post('id_user'),
+      "tanggal_selesai" => $this->input->post('tanggal_selesai'),
+
+
+
     );
-
-    // This function add items into cart.
-    $this->cart->insert('menu');
-    redirect('menu');
+    $this->db->insert('transaksi');
+    redirect('transaksi');
   }
-  public function remove()
-  {
-    $data = array();
-    $this->cart->update('id_menu', $data);
-    redirect('shoppingchart');
-  }
-  
-
 
   // ------------------------------------------------------------------------
 
 }
 
-/* End of file Shoopingcart_model.php */
-/* Location: ./application/models/Shoopingcart_model.php */
+/* End of file History_model.php */
+/* Location: ./application/models/History_model.php */

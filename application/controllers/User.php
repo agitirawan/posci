@@ -39,26 +39,26 @@ class User extends CI_Controller
 
   // fitur menu , Kategori
   public function menu()
-  { 
+  {
 
     // ambil data kategori dan menu
     $menu = $this->User_model->getMenu();
     $kategori = $this->User_model->all_kategori();
 
-    
+
 
     $data_menu = array();
-    foreach ( $kategori AS $kt ) {
+    foreach ($kategori as $kt) {
 
       // ambil data menu berdasarkan id_kategori
       $id_kategori = $kt['id_kategori'];
-      $ambilDTMenu_id_kategori = $this->User_model->ambil_data_menu_Id_kategori( $id_kategori );
+      $ambilDTMenu_id_kategori = $this->User_model->ambil_data_menu_Id_kategori($id_kategori);
 
-      array_push( $data_menu, array(
+      array_push($data_menu, array(
 
         'kategori'  => $kt,
         'menu'      => $ambilDTMenu_id_kategori
-      ) );
+      ));
     }
 
 

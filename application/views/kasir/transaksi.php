@@ -24,6 +24,20 @@
                         </tr>
                     </thead>
                     <tfoot>
+                        <?php
+                        $no = 1;
+                        foreach ($transaksi as $row) {
+                        ?>
+                            <tr>
+                                <td><?php echo $no++; ?></td>
+                                <td><?php echo $row->id_transaks_detail; ?></td>
+                                <td><?php echo $row->id_transaksi; ?></td>
+                                <td><?php echo $row->menu; ?></td>
+                                <td><?php echo $row->menu; ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
                     </tfoot>
                     <tbody>
                         </tr>

@@ -58,15 +58,65 @@ class Kasir extends CI_Controller
     }
     public function history()
     {
+        $data['transaksi'] = $this->History_model->get_all_history();
         $this->load->view('kasir/template/template_header');
-        $this->load->view('kasir/history');
+        $this->load->view('kasir/history', $data);
         $this->load->view('kasir/template/template_footer');
     }
     public function transaksi()
     {
+        $data['transaksi'] = $this->transaksi_model->get_all_transaksi();
         $this->load->view('kasir/template/template_header');
-        $this->load->view('kasir/transaksi');
+        $this->load->view('kasir/transaksi', $data);
         $this->load->view('kasir/template/template_footer');
+    }
+    public function tambah_data_transaksi($id_transaksi)
+    {
+        $data = array(
+            'id'      => $id_transaksi,
+            'name'    => $id_transaksi['nam_menu'],
+            'qty'     => 1,
+            'price'   => $id_transaksi['harga'],
+            'id'      => $id_transaksi['id_user'],
+            'number'  => $id_transaksi['telpon'],
+            'status'  => $id_transaksi['status'],
+            'date'    => $id_transaksi['tanggal'],
+            'date'    => $id_transaksi['tanggal_selesai'],
+
+        );
+
+
+        $this->db->insert($data);
+
+
+        $transaksi = $this->Kasir_model->proses_id_transaksi($id_transaksi);
+        redirect('kasir/transaksi');
+    }
+    public function tambah_data_history($id_transaksi)
+    {
+        $data = array(
+            'id'      => $id_transaksi,
+            'name'    => $id_transaksi['nam_menu'],
+            'qty'     => 1,
+            'price'   => $id_transaksi['harga'],
+            'id'      => $id_transaksi['id_user'],
+            'number'  => $id_transaksi['telpon'],
+            'status'  => $id_transaksi['status'],
+            'date'    => $id_transaksi['tanggal'],
+            'date'    => $id_transaksi['tanggal_selesai'],
+
+        );
+        $this->db->insert($data);
+        $transaksi = $this->Kasir_model->proses_id_transaksi($id_transaksi);
+        redirect('kasir/history');
+    }
+    public function insert_data_transaksi()
+    {
+        $this->Transaksi_model->insert_data();
+    }
+    public function insert_data_history()
+    {
+        $this->History_model->insert_data();
     }
 }
 

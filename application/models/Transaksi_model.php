@@ -30,11 +30,26 @@ class Transaksi_model extends CI_Model
 
 
   // ------------------------------------------------------------------------
-  public function getdata_transaksi()
+  public function insert_data()
   {
-    $data_transaksi_detail = $this->db->get('transaksi_detail');
-    return $data_transaksi_detail->result();
+    $insert_data = array(
+      "id_transaksi" => $this->input->post('id_transaksi'),
+      "nama" => $this->input->post('nama'),
+      "jenis_pesanan" => $this->input->post('jenis_pesanan'),
+      "id_user" => $this->input->post('id_user'),
+      "telpon" => $this->input->post('telpon'),
+      "type" => $this->input->post('id_user'),
+      "status" => $this->input->post('status'),
+      "tanggal" => $this->input->post('id_user'),
+      "tanggal_selesai" => $this->input->post('tanggal_selesai'),
+
+
+
+    );
+    $this->db->insert('transaksi');
+    redirect('transaksi');
   }
+
 
   // ------------------------------------------------------------------------
 
