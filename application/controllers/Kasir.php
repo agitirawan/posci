@@ -9,9 +9,11 @@ class Kasir extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Ordermenu_model');
+        $this->load->model('User_model');
         $this->load->model('Metode_model');
         $this->load->model('Pemesanan_model');
         $this->load->model('Transaksi_model');
+        $this->load->model('Menu_model');
     }
 
     public function index()
@@ -118,6 +120,116 @@ class Kasir extends CI_Controller
     public function insert_data_antrian()
     {
         $this->Antrian_model->insert_data();
+    }
+    public function tambah_pesanan()
+    {
+        $kasir = $this->tambah_pesanan_model->tambah_pesanan($id_transaksi);
+        redirect('kasir/tambah_pesanan');
+    }
+
+
+
+
+
+
+    // tambah 
+    public function pesanbaru()
+    {
+
+
+        // ambil data kategori dan menu
+        $kategori = $this->User_model->all_kategori();
+
+
+        $data_menu = array();
+        foreach ($kategori as $kt) {
+
+            // ambil data menu berdasarkan id_kategori
+            $id_kategori = $kt['id_kategori'];
+            $ambilDTMenu_id_kategori = $this->User_model->ambil_data_menu_Id_kategori($id_kategori);
+
+            array_push($data_menu, array(
+
+                'kategori'  => $kt,
+                'menu'      => $ambilDTMenu_id_kategori
+            ));
+        }
+
+        $data['tampil'] = $data_menu;
+        $data['kategori'] = $kategori;
+
+        $this->load->view('kasir/template/template_header');
+        $this->load->view('kasir/tambah_pesanan', $data);
+        $this->load->view('kasir/template/template_footer');
+    }
+
+
+
+    public function pembayaran()
+    {
+
+        $this->load->view('kasir/template/template_header');
+        $this->load->view('kasir/tambah_pembayaran');
+        $this->load->view('kasir/template/template_footer');
+    }
+
+
+    public function proses_tambah_keranjang($id_menu)
+    {
+
+        $this->load->library('cart');
+        $menu = $this->Menu_model->proses_id_menu($id_menu);
+
+
+
+        // tambah cart
+        $data = array(
+            'id'      => $id_menu,
+            'qty'     => 1,
+            'price'   => $menu['harga'],
+            'name'    => $menu['nam_menu'],
+            'coupon'         => $menu['gambar']
+        );
+
+        $this->cart->insert($data);
+
+        // html 
+        $html = '<script>alert("Item berhasil ditambahkan")</script>';
+        $this->session->set_flashdata('msg', $html);
+
+        redirect('kasir/pesanbaru');
+    }
+    public function remove($rowid)
+    {
+        $this->load->library('cart');
+
+        $data = array(
+            'rowid'      => $rowid,
+            'qty'     => 0,
+        );
+        $this->cart->update($data);
+        // html 
+        $html = '<script>alert("Item berhasil dihapus")</script>';
+        $this->session->set_flashdata('msg', $html);
+
+        redirect('kasir/shoppingcart');
+    }
+
+
+
+    public function update($rowid)
+    {
+
+        $permintaan = $this->input->post('permintaan');
+
+        $this->load->library('cart');
+
+        $data = array(
+            'rowid'      => $rowid,
+            'qty'     => $permintaan,
+        );
+        $this->cart->update($data);
+        redirect('kasir/shoppingcart');
     }
 }
 

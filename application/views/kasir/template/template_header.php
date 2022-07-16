@@ -135,31 +135,27 @@
               </a>
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
-                  Message Center
+                  Pembelian
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="assets/kasir/img/man.png" style="max-width: 60px" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been
-                      having.</div>
-                    <div class="small text-gray-500">Udin Cilok · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="assets/kasir/img/girl.png" style="max-width: 60px" alt="">
-                    <div class="status-indicator bg-default"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people
-                      say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Jaenab · 2w</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+
+                <?php
+                $total = 0;
+                foreach ($this->cart->contents() as $cart) :
+
+                  $total += $cart['subtotal'];
+                ?>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3">
+                      <img class="rounded-circle" src="<?php echo base_url('assets/gambar/' . $cart['coupon']) ?>" style="max-width: 60px" alt="">
+
+                    </div>
+                    <div class="font-weight-bold">
+                      <div class="text-truncate"><?php echo $cart['name'] ?></div>
+                      <div class="small "><?php echo number_format($cart['price'], 2) ?></div>
+                    </div>
+                  </a>
+                <?php endforeach; ?>
+                <a class="dropdown-item text-center small text-gray-500" href="<?php echo base_url('kasir/pembayaran') ?>">Lanjut Pembayaran</a>
               </div>
             </li>
             <li class="nav-item dropdown no-arrow mx-1">
