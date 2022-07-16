@@ -13,8 +13,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Id Transaksi</th>
-                            <th>Id User</th>
+                            <th>No</th>
                             <th>Nama</th>
                             <th>Jenis Pesanan</th>
                             <th>Type</th>
@@ -30,10 +29,12 @@
                         ?>
                             <tr>
                                 <td><?php echo $no++; ?></td>
-                                <td><?php echo $row->id_transaks_detail; ?></td>
-                                <td><?php echo $row->id_transaksi; ?></td>
-                                <td><?php echo $row->menu; ?></td>
-                                <td><?php echo $row->menu; ?></td>
+                                <td><?php echo $row['nama']; ?></td>
+                                <td><?php echo $row['jenis_pesanan']; ?></td>
+                                <td><?php echo $row['type']; ?></td>
+                                <td><?php echo $row['status']; ?></td>
+                                <td><?php echo $row['tanggal']; ?></td>
+                                <td><?php echo $row['tanggal_selesai']; ?></td>
                             </tr>
                         <?php
                         }

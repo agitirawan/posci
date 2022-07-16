@@ -11,6 +11,7 @@ class Kasir extends CI_Controller
         $this->load->model('Ordermenu_model');
         $this->load->model('Metode_model');
         $this->load->model('Pemesanan_model');
+        $this->load->model('Transaksi_model');
     }
 
     public function index()
@@ -60,12 +61,12 @@ class Kasir extends CI_Controller
     {
         $data['transaksi'] = $this->History_model->get_all_history();
         $this->load->view('kasir/template/template_header');
-        $this->load->view('kasir/history', $data);
+        $this->load->view('kasir/antrian', $data);
         $this->load->view('kasir/template/template_footer');
     }
     public function transaksi()
     {
-        $data['transaksi'] = $this->transaksi_model->get_all_transaksi();
+        $data['transaksi'] = $this->Transaksi_model->get_all_transaksi();
         $this->load->view('kasir/template/template_header');
         $this->load->view('kasir/transaksi', $data);
         $this->load->view('kasir/template/template_footer');
@@ -92,7 +93,7 @@ class Kasir extends CI_Controller
         $transaksi = $this->Kasir_model->proses_id_transaksi($id_transaksi);
         redirect('kasir/transaksi');
     }
-    public function tambah_data_history($id_transaksi)
+    public function tambah_data_antrian($id_transaksi)
     {
         $data = array(
             'id'      => $id_transaksi,
@@ -108,15 +109,15 @@ class Kasir extends CI_Controller
         );
         $this->db->insert($data);
         $transaksi = $this->Kasir_model->proses_id_transaksi($id_transaksi);
-        redirect('kasir/history');
+        redirect('kasir/antrian');
     }
     public function insert_data_transaksi()
     {
         $this->Transaksi_model->insert_data();
     }
-    public function insert_data_history()
+    public function insert_data_antrian()
     {
-        $this->History_model->insert_data();
+        $this->Antrian_model->insert_data();
     }
 }
 

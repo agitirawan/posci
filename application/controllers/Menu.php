@@ -65,7 +65,7 @@ class Menu extends CI_Controller
       $jumlah = $this->input->post('jumlah', TRUE);
 
       $data = array(
-        'id_kategori' => $id_kategori ,
+        'id_kategori' => $id_kategori,
         'nam_menu' => $nam_menu,
         'harga' => $harga,
         'jumlah' => $jumlah,
@@ -139,7 +139,8 @@ class Menu extends CI_Controller
 
 
 
-  public function update( $rowid ) {
+  public function update($rowid)
+  {
 
     $permintaan = $this->input->post('permintaan');
 
@@ -151,6 +152,5 @@ class Menu extends CI_Controller
     );
     $this->cart->update($data);
     redirect('user/shoppingcart');
-
   }
 }

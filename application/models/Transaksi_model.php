@@ -29,6 +29,14 @@ class Transaksi_model extends CI_Model
   // ------------------------------------------------------------------------
 
 
+
+  public function get_all_transaksi()
+  {
+
+    return $this->db->get('transaksi')->result_array();
+  }
+
+
   // ------------------------------------------------------------------------
   public function insert_data()
   {

@@ -42,8 +42,9 @@
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header"> Data Kasir</h6>
-            <a class="collapse-item" href="<?php echo base_url('kasir/history') ?>">History</a>
+            <a class="collapse-item" href="<?php echo base_url('kasir/index') ?>">Antrian</a>
             <a class="collapse-item" href="<?php echo base_url('kasir/transaksi') ?>">Transaksi</a>
+            <a class="collapse-item" href="<?php echo base_url('kasir/tambah_pesanan') ?>">Tambah Pesanan</a>
           </div>
         </div>
       </li>
