@@ -177,12 +177,12 @@ class Menu extends CI_Controller
       foreach ($data_transaksi->result_array() as $isi) {
 
         // data transaksi id 
-        $this->db->select('transaksi_detail.*, menu.*')->from('transaksi_detail')->join('menu', 'menu.id_menu = transaksi_detail.id_menu');
+        $this->db->select('transaksi_detail.*, menu.nam_menu, harga')->from('transaksi_detail')->join('menu', 'menu.id_menu = transaksi_detail.id_menu');
         $this->db->where('id_transaksi', $isi['id_transaksi']);
-        $dt_transaksi_detail = $this->db->get();
+        $dt_transaksi_detail = $this->db->get()->result_array();
 
         $total = 0;
-        foreach ($dt_transaksi_detail->result_array() as $isi_detail) {
+        foreach ($dt_transaksi_detail as $isi_detail) {
 
           $total += $isi_detail['harga'];
         }
@@ -196,7 +196,11 @@ class Menu extends CI_Controller
       }
     }
 
-    $data['transaksi'] = $data_transaksi;
+
+    // header('Content-Type: application/json');
+
+    // print_r( $dt_transaksi );
+    $data['transaksi'] = $dt_transaksi;
 
     $this->load->view('user/template/header');
     $this->load->view('user/history', $data);

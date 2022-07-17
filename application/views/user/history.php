@@ -35,10 +35,18 @@
                             foreach ($transaksi as $isi) : ?>
 
                                 <tr>
-                                    <td><?php echo $no ?></td>
-                                    <td><?php echo $isi['info']['tanggal'] ?></td>
-                                    <td><?php echo $isi['total'] ?></td>
+                                    <td rowspan="2" style="border-bottom: 5px solid #e0e0e0"><?php echo $no ?></td>
+                                    <td rowspan="2" style="border-bottom: 5px solid #e0e0e0"><?php echo $isi['info']['tanggal'] ?></td>
+                                    <td><?php echo number_format($isi['total']) ?></td>
                                     <td><?php echo $isi['info']['type'] ?></td>
+                                    <td><?php echo $isi['info']['status'] ?></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="border-bottom: 5px solid #e0e0e0">
+                                        <?php foreach ( $isi['detail'] AS $detail ) : ?>
+                                            - <?php echo $detail['nam_menu'] ?> (<?php echo $detail['jumlah'] ?> item) <br>
+                                        <?php endforeach; ?>
+                                    </td>
                                 </tr>
 
                             <?php
