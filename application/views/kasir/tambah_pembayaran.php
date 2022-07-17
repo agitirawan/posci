@@ -53,7 +53,7 @@
 
         <div class="col-md-4">
             <div class="card card-body">
-                <form action="" method="POST">
+                <form action="<?php echo base_url('kasir/tambahpemesanan') ?>" method="POST">
 
                     <div class="form-group">
                         <label for="">Total</label>
@@ -69,10 +69,20 @@
                         <label for="">Nominal Pembayaran</label>
                         <input type="number" class="form-control" name="pembayaran" placeholder=" . . . " />
                     </div>
+                    <div class="form-group">
+                        <label for="">Tipe Pesanan</label><br><br>
+
+                        <small for="dine_in">Dine In</small>
+                        <input type="radio" name="tipe" id="dine_in" value="dine_in" />
+
+                        <small for="dine_in">Take Away</small>
+                        <input type="radio" name="tipe" id="take_away" value="take_away" />
+                    </div>
 
                     <div class="form-group">
                         <label for="">Kembalian</label>
-                        <h5>Rp 0</h5>
+                        <h5 id="text-kembalian">Rp 0</h5>
+                        <input type="hidden" name="kembalian" />
                     </div>
 
                     <hr>
@@ -87,3 +97,30 @@
     </div>
 
 </div>
+
+
+<script>
+    $(function() {
+
+
+        $('input[name="pembayaran"]').keyup(function() {
+
+            var nilai = $(this).val();
+            var kembalian;
+            var total = $('input[name="total"]').val();
+
+
+            kembalian = nilai - total;
+
+            if (nilai > 0) {
+
+                $('#text-kembalian').text(kembalian);
+                $('input[name="kembalian"]').val(kembalian);
+            }
+
+
+
+
+        })
+    })
+</script>

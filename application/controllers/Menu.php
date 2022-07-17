@@ -153,4 +153,53 @@ class Menu extends CI_Controller
     $this->cart->update($data);
     redirect('user/shoppingcart');
   }
+
+
+
+
+
+
+
+
+
+
+
+
+  // hasil 
+  public function history()
+  {
+    $dt_transaksi = array();
+
+    $data_transaksi = $this->db->get('transaksi');
+    if ($data_transaksi->num_rows() > 0) {
+
+      $dt_transaksi_detail = [];
+      foreach ($data_transaksi->result_array() as $isi) {
+
+        // data transaksi id 
+        $this->db->select('transaksi_detail.*, menu.*')->from('transaksi_detail')->join('menu', 'menu.id_menu = transaksi_detail.id_menu');
+        $this->db->where('id_transaksi', $isi['id_transaksi']);
+        $dt_transaksi_detail = $this->db->get();
+
+        $total = 0;
+        foreach ($dt_transaksi_detail->result_array() as $isi_detail) {
+
+          $total += $isi_detail['harga'];
+        }
+
+        array_push($dt_transaksi, array(
+
+          'info'  => $isi,
+          'detail' => $dt_transaksi_detail,
+          'total'  => $total
+        ));
+      }
+    }
+
+    $data['transaksi'] = $data_transaksi;
+
+    $this->load->view('user/template/header');
+    $this->load->view('user/history', $data);
+    $this->load->view('user/template/footer');
+  }
 }

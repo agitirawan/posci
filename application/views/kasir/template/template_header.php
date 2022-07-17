@@ -12,6 +12,7 @@
   <link href="<?php echo base_url() ?>assets/kasir/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="<?php echo base_url() ?>assets/kasir/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="<?php echo base_url() ?>assets/kasir/css/ruang-admin.min.css" rel="stylesheet">
+  <script src="<?php echo base_url() ?>assets/kasir/vendor/jquery/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -131,7 +132,7 @@
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
-                <span class="badge badge-warning badge-counter">2</span>
+                <span class="badge badge-warning badge-counter"><?php echo count($this->cart->contents()) ?></span>
               </a>
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">

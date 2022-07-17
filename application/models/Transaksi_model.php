@@ -59,6 +59,29 @@ class Transaksi_model extends CI_Model
   }
 
 
+  public function insert_kasir($data)
+  {
+
+    $this->db->insert('transaksi', $data);
+    return $this->db->insert_id();
+  }
+
+
+  public function insert_multiple($data_detail)
+  {
+
+    $this->db->insert_batch('transaksi_detail', $data_detail);
+  }
+
+
+  public function pembayaran($data)
+  {
+
+    $this->db->insert('pembayaran', $data);
+  }
+
+
+
   // ------------------------------------------------------------------------
 
 }

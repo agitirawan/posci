@@ -123,7 +123,7 @@ class Kasir extends CI_Controller
     }
     public function tambah_pesanan()
     {
-        $kasir = $this->tambah_pesanan_model->tambah_pesanan($id_transaksi);
+        // $kasir = $this->tambah_pesanan_model->tambah_pesanan($id_transaksi);
         redirect('kasir/tambah_pesanan');
     }
 
@@ -230,6 +230,55 @@ class Kasir extends CI_Controller
         );
         $this->cart->update($data);
         redirect('kasir/shoppingcart');
+    }
+
+
+    // tambah pemesanan 
+    public function tambahpemesanan()
+    {
+
+        $data = array(
+
+            'nama'          => $this->input->post('nama'),
+            'jenis_pesanan' => "offline",
+            'id_user'       => $this->session->userdata('id_user'),
+            'telpon'        => "",
+            'type'          => $this->input->post('tipe'),
+            'status'        => "proses"
+        );
+
+
+        print_r($data);
+        $id_transaksi = $this->Transaksi_model->insert_kasir($data);
+
+
+        // data transaksi detail
+        $data_detail = array();
+        foreach ($this->cart->contents() as $isi) {
+
+            array_push($data_detail, array(
+                'id_transaksi'  => $id_transaksi,
+                'id_menu'   => $isi['id'],
+                'jumlah'    => $isi['qty']
+            ));
+        }
+
+        $this->Transaksi_model->insert_multiple($data_detail);
+
+
+        // pembayaran 
+        $data_pembayaran = array(
+
+            'id_transaksi'  => $id_transaksi,
+            'type'      => "cash",
+            'nominal'   => $this->input->post('kembalian')
+        );
+        $this->Transaksi_model->pembayaran($data_pembayaran);
+
+        // mengkosongkan cart
+        $this->cart->destroy();
+
+        redirect('kasir/pesanbaru');
     }
 }
 
