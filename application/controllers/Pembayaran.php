@@ -25,6 +25,8 @@ class Pembayaran extends CI_Controller
   {
     parent::__construct();
     $this->load->model('Pembayaran_model');
+
+    
   }
 
   public function index()
@@ -36,10 +38,15 @@ class Pembayaran extends CI_Controller
   }
   public function tambah_pembayaran()
   {
-    $data['pembayaran'] = $this->Pembayaran_model->Semuadata_pembayaran();
-    $this->load->view('templates/header');
-    $this->load->view('pembayaran/tambah_data', $data);
-    $this->load->view('templates/footer');
+      $data['pembayaran'] = $this->Pembayaran_model->Semuadata_pembayaran();
+
+      
+
+
+
+      $this->load->view('templates/header');
+      $this->load->view('pembayaran/tambah_data', $data);
+      $this->load->view('templates/footer');
   }
   public function proses_tambah_pembayaran()
   {
@@ -62,6 +69,9 @@ class Pembayaran extends CI_Controller
 
     $input = $this->input->post();
 
+    $result = json_decode($this->input->post('result_data'));
+    var_dump($result);
+
     $transaksi = array(
 
       'nama'             => $this->input->post('nama'),
@@ -72,7 +82,8 @@ class Pembayaran extends CI_Controller
     );
 
     // insert 1
-    $id_transaksi = $this->Pembayaran_model->insert_transaksi($transaksi);
+    // $id_transaksi = $this->Pembayaran_model->insert_transaksi($transaksi);
+    $id_transaksi = "";
 
 
     // insert 2
@@ -88,13 +99,13 @@ class Pembayaran extends CI_Controller
     }
 
 
-    $this->Pembayaran_model->insert_detail_transaksi($detail_transaksi);
+    // $this->Pembayaran_model->insert_detail_transaksi($detail_transaksi);
 
-    // bersihkan keranjang
-    $this->cart->destroy();
+    // // bersihkan keranjang
+    // $this->cart->destroy();
 
-    // kembali ke menu
-    redirect('user/menu');
+    // // kembali ke menu
+    // redirect('user/menu');
   }
 }
 

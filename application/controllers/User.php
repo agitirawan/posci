@@ -28,6 +28,12 @@ class User extends CI_Controller
     $this->load->library('cart');
     $this->load->model('Shoppingcart_model');
     $this->load->model('Detail_model');
+
+
+    $params = array('server_key' => 'SB-Mid-server-2kVi3s2DG5H2nhPeMuS9-u3l', 'production' => false);
+		$this->load->library('midtrans');
+		$this->midtrans->config($params);
+		$this->load->helper('url');
   }
 
   public function index()
@@ -101,8 +107,73 @@ class User extends CI_Controller
 
   public function pembayaran()
   {
+
+
+
+    // - - - - -
+
+    $total = 0;
+    $item_details = array();
+
+    foreach ( $this->cart->contents() AS $cart ) {
+
+      $total += $cart['subtotal'];
+
+      array_push( $item_details, array(
+
+        'id'    => $cart['rowid'],
+        'price' => $cart['price'],
+        'quantity' => $cart['qty'],
+        'name' => $cart['name'],
+      ) );
+    }
+
+    /// - - - - -
+
+
+
+
+
+
+
+
+
+
+
+
+    // Required
+    $transaction_details = array(
+      'order_id' => strtoupper(rand()),
+      'gross_amount' => $total, // no decimal allowed for creditcard
+    );
+
+
+    // Data yang akan dikirim untuk request redirect_url.
+    $credit_card['secure'] = true;
+    //ser save_card true to enable oneclick or 2click
+    //$credit_card['save_card'] = true;
+
+    $time = time();
+    $custom_expiry = array(
+      'start_time' => date("Y-m-d H:i:s O",$time),
+      'unit' => 'minute', 
+      'duration'  => 10
+    );
+        
+    $transaction_data = array(
+      'transaction_details'=> $transaction_details,
+      'item_details'       => $item_details,
+      'credit_card'        => $credit_card,
+      'expiry'             => $custom_expiry
+    );
+
+    $snapToken = $this->midtrans->getSnapToken($transaction_data);
+    
+
+    $data['snap'] = $snapToken;
+
     $this->load->view('user/template/header');
-    $this->load->view('user/pembayaran');
+    $this->load->view('user/pembayaran', $data);
     $this->load->view('user/template/footer');
   }
   public function detail_view()
@@ -128,6 +199,21 @@ class User extends CI_Controller
     $this->session->sess_destroy();
     redirect('auth');
   }
+
+
+
+
+
+
+
+  public function finish()
+    {
+    	$result = json_decode($this->input->post('result_data'));
+    	echo 'RESULT <br><pre>';
+    	var_dump($result);
+    	echo '</pre>' ;
+
+    }
 }
 
 

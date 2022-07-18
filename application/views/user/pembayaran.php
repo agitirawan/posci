@@ -14,7 +14,11 @@
 
 
 
- <form action="<?php echo base_url('pembayaran/transaksi') ?>" method="post">
+ <form action="<?php echo base_url('pembayaran/transaksi') ?>" method="post" id="form-payment">
+
+
+    <input type="hidden" name="result_type" id="result-type" value="">
+    <input type="hidden" name="result_data" id="result-data" value="">
      <!-- 404 Start -->
      <div class="container-xxl py-6 wow fadeInUp" data-wow-delay="0.1s">
          <div class="container">
@@ -105,7 +109,7 @@
                                      </div>
 
                                      <hr>
-                                     <button style="width: 100%" class="btn btn-primary rounded-pill py-3 px-5" href="<?php echo base_url('user/pembayaran') ?>">selesai</button>
+                                     <button type="button" id="pay-button" style="width: 100%" class="btn btn-primary rounded-pill py-3 px-5">selesai</button>
                                      <small>Klik untuk menyelesaikan pemesanan</small>
                                  </td>
                              </tr>
@@ -116,3 +120,51 @@
          </div>
          <!-- 404 End -->
  </form>
+
+
+ <script type="text/javascript"
+            src="https://app.sandbox.midtrans.com/snap/snap.js"
+            data-client-key="SB-Mid-client-TLBWJihxDuuHyfCr"></script>
+ <script>
+    $('#pay-button').click(function (event) {
+        event.preventDefault();
+        // $(this).attr("disabled", "disabled");
+
+
+
+        var resultType = document.getElementById('result-type');
+        var resultData = document.getElementById('result-data');
+
+        function changeResult(type,data){
+          $("#result-type").val(type);
+          $("#result-data").val(JSON.stringify(data));
+          //resultType.innerHTML = type;
+          //resultData.innerHTML = JSON.stringify(data);
+        }
+
+
+
+        snap.pay("<?php echo $snap ?>", {
+          
+          onSuccess: function(result){
+            changeResult('success', result);
+            console.log(result.status_message);
+            console.log(result);
+            $("#form-payment").submit();
+          },
+          onPending: function(result){
+            changeResult('pending', result);
+            console.log(result.status_message);
+            $("#form-payment").submit();
+          },
+          onError: function(result){
+            changeResult('error', result);
+            console.log(result.status_message);
+            $("#form-payment").submit();
+          }
+        });
+    
+    
+    });
+
+ </script>

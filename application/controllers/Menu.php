@@ -26,6 +26,11 @@ class Menu extends CI_Controller
     parent::__construct();
     $this->load->model('Menu_model');
     $this->load->model('Kategori_model');
+
+    $params = array('server_key' => 'SB-Mid-server-2kVi3s2DG5H2nhPeMuS9-u3l', 'production' => false);
+		$this->load->library('midtrans');
+		$this->midtrans->config($params);
+		$this->load->helper('url');
   }
 
   public function index()
